@@ -1,0 +1,73 @@
+{
+  "method": "optimized",
+  "start": 113,
+  "successors": [
+    127,
+    131,
+    137,
+    139,
+    149,
+    151,
+    157,
+    163,
+    167,
+    173
+  ],
+  "independent_trial_verification": true,
+  "verification_cost_included_in_engine_times": false,
+  "current": 173,
+  "exponent": 452,
+  "precision_bits": 4324,
+  "stored_past_primes": 40,
+  "stats": {
+    "initialization_seconds": 0.0009274210005969508,
+    "advance_seconds": 0.00044156900003144983,
+    "seed_sieve_seconds": 1.8368000382906757e-05,
+    "zeta_seconds": 0.0006220389996087761,
+    "euler_product_seconds": 0.0002602929998829495,
+    "extraction_seconds": 0.00010560900136624696,
+    "transition_updates_seconds": 0.000215243999264203,
+    "zeta_evaluations": 1,
+    "euler_factors_evaluated": 40,
+    "state_rebuilds": 1,
+    "precision_retries": 0,
+    "successor_steps": 10,
+    "future_candidate_primality_tests": 0,
+    "past_primes_enumerated_at_initialization": 30,
+    "maximum_precision_bits": 4324
+  },
+  "last_certificate": {
+    "previous": 167,
+    "next": 173,
+    "exponent": 452,
+    "precision_bits": 4324,
+    "root_enclosure": "[172.999999921832064459192 +/- 3.81e-22]",
+    "residual_enclosure": "[2.53023858638e-1012 +/- 3.45e-1024]",
+    "strict_lower_integer": 172,
+    "strict_upper_integer": 174,
+    "rounding": "nearest odd integer",
+    "interval_containment_checked": true,
+    "epoch_upper_current": 226,
+    "past_euler_factors_before_step": 39,
+    "future_candidate_primality_tests": 0,
+    "assumptions": [
+      "complete prime prefix in state",
+      "finite-exponent extraction lemma",
+      "Bertrand's postulate (identity start handled separately)",
+      "correct FLINT/Arb enclosure implementation"
+    ],
+    "standalone_formal_certificate": false
+  },
+  "precision_work": {
+    "reduced_precision_factors": 30,
+    "factor_precision_bits_sum": 67852,
+    "full_precision_factor_bits_sum": 129720,
+    "minimum_factor_precision_bits": 1644,
+    "maximum_factor_precision_bits": 3904,
+    "decoding_attempts": 10,
+    "decoding_precision_bits_sum": 1358,
+    "full_decoding_precision_bits_sum": 43240
+  },
+  "variant": "precision-aware Euler corrections and decoding",
+  "transition_update_precision": "full state precision (inherited)"
+}

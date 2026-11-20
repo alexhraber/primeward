@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-11-20T23:19:15.849860+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python_flint": "0.9.0",
+  "tests_run": 26,
+  "test_failures": 0,
+  "test_errors": 0,
+  "test_success": true,
+  "test_log": "validation_log.txt",
+  "cli_exit_code": 0,
+  "cli_record": "cli_smoke.json",
+  "benchmark_source_hashes": {
+    "analytic.py": {
+      "expected": "0389caac956411d944e7b25bdad58e931ee805dad196a17408e1cfaf0e709022",
+      "actual": "0389caac956411d944e7b25bdad58e931ee805dad196a17408e1cfaf0e709022",
+      "matches": true
+    },
+    "optimized.py": {
+      "expected": "31fdc42bac2d5056c37e1b2aabb4ad2f2f4ca3c370972045987a1e9195a17e8f",
+      "actual": "31fdc42bac2d5056c37e1b2aabb4ad2f2f4ca3c370972045987a1e9195a17e8f",
+      "matches": true
+    },
+    "engine.py": {
+      "expected": "d161b4d78f8ec2b36883980972aba62fa054584c1db896fe591523360d74fd9a",
+      "actual": "d161b4d78f8ec2b36883980972aba62fa054584c1db896fe591523360d74fd9a",
+      "matches": true
+    }
+  },
+  "elapsed_seconds": 0.5099058279993187
+}

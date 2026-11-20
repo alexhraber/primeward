@@ -1,0 +1,9 @@
+{
+  "check": "Replace every value after the current-prime cutoff with deliberately false future data. Past-only feature matrices must remain unchanged while the final successor label changes.",
+  "cutoff": 1009,
+  "all_features_unchanged": true,
+  "last_label_changed": true,
+  "true_last_gap": 4,
+  "corrupted_last_gap": 1,
+  "row_count": 1
+}

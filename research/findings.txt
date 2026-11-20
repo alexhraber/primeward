@@ -1,0 +1,323 @@
+PRIME SUCCESSOR LAB — RESEARCH FINDINGS
+Version 0.1, November 20, 2026
+
+OUTCOME
+
+This research iteration produced an executable, exact analytic successor
+algorithm, a precision-aware variant, independent reference implementations,
+a finite correctness argument, and a reproducible weighted-history experiment.
+The analytic engine can compute the immediate next prime, incorporate it into
+its state, and repeat. Its transition does not test prospective integers for
+primality one at a time.
+
+The outstanding objective is computational efficiency. Initialization currently
+reconstructs all primes up to the starting prime, so inexpensive arbitrary
+entry remains unsolved. The implementation also requires substantial numerical
+precision. It is much slower than the included segmented sieve. This package makes
+the proposal concrete and measurable; it does not establish a competitive new
+prime generator or a new fundamental theorem about primes.
+
+The construction does not require the Riemann Hypothesis. Its analytic family
+is established research, particularly Solomon W. Golomb's 1976 paper, Formulas
+for the next prime. No priority claim is made for the finite bound or its
+presentation here. The sources are listed at the end of this report.
+
+THE RESEARCH TARGET
+
+The intended algorithm starts from a known prime and useful arithmetic state,
+calculates its immediate successor, updates that state, and repeats. The
+desired improvement would make initialization, updates, and exact extraction
+cheaper than strong existing methods. Success must include knowing that no
+intervening prime was skipped.
+
+The starting prime already determines its successor mathematically. Historical
+information may nevertheless save computation by retaining useful arithmetic
+work. The question is which representation retains that work economically.
+Counting the number of stored variables is insufficient: one number can carry
+an enormous number of bits.
+
+HOW THE EXACT STATE WORKS
+
+Give every positive integer a weight that decreases as a fixed inverse power
+of that integer. The zeta function represents the total of those weights.
+Multiplying by an Euler factor for a prime removes the total contribution of
+integers divisible by that prime. Applying the factors for every prime through
+the current prime leaves the weights of integers with no such prime divisor.
+
+The integer one remains. It contributes exactly one because it is the
+multiplicative identity. Removing that explicit unit contribution leaves a
+positive remainder. The smallest integer represented in that remainder is the
+immediate next prime. A smaller composite would have a prime factor already
+removed; a smaller prime would contradict the meaning of immediate successor.
+
+The next prime supplies the leading contribution to the remainder. A finite
+root extraction separates that leading value sufficiently to recover an exact
+integer. Once recovered, one additional Euler factor removes its multiples and
+restores the same state interpretation for the following step.
+
+This is a mathematical description of the numerical state, not an instruction
+to enumerate an infinite list of integers. The program evaluates the zeta
+function and a finite product using enclosing arithmetic. The library's
+special-function calculations and power evaluations are real computational
+work, and their costs are included in the timings.
+
+WHY FINITE EXTRACTION IS EXACT
+
+Choose the integer exponent to be at least the unknown successor. The
+remainder is greater than the inverse-power contribution of the successor
+alone, because later surviving integers also contribute. For an upper bound,
+allow every larger integer to contribute, including those actually removed.
+An integral bound controls this enlarged tail.
+
+Bernoulli's inequality then places the entire remainder below the inverse-power
+contribution associated with one less than the successor. Taking the reciprocal
+root puts the extracted real value strictly between one less than the
+successor and the successor. Its ceiling is therefore exactly the successor.
+The complete argument is in research/theory_review.md.
+
+The apparent need to know the successor when choosing the exponent is resolved
+by Bertrand's postulate: after a prime of at least two, the next prime is less
+than twice the current prime. A sufficiently large exponent can consequently
+be chosen from the current prime alone.
+
+After the current prime reaches two, every successor is odd. The implementation
+uses that fact to decode within a cell centered on an odd integer. This avoids
+needing to resolve the tiny positive distance between the extracted value and
+the successor. The proof gives a positive margin from the lower even boundary.
+The full computed enclosure must fit within one permitted cell before any
+integer is accepted.
+
+One is supported explicitly as the initial state. It is never classified as a
+prime. Starting there, the original ceiling extraction computes two from the
+same weighted remainder; the code does not substitute a separately hardcoded
+first answer in the analytic calculation.
+
+REUSE AND NUMERICAL GUARANTEES
+
+The program chooses an exponent large enough to cover several successive
+primes. During that interval, it reuses the zeta value and updates the product
+with one new factor per prime. When the current prime becomes too large for
+that exponent, it starts a new interval and rebuilds the product at a larger
+exponent. Those rebuilds are charged to advancement time.
+
+FLINT/Arb ball arithmetic represents a real result by an enclosing interval
+that includes arithmetic and approximation error. The implementation accepts
+a successor only when the complete interval justifies a unique integer result.
+An inconclusive enclosure triggers higher precision and a rebuild. Exceeding
+an explicit resource limit raises an error instead of returning a guess.
+
+The precision-aware variant evaluates very small correction terms with less
+relative precision and decodes the final integer at a lower precision. It
+still subtracts enclosing corrections from the full-precision state and retains
+the same acceptance checks. It improves arithmetic effort without changing the
+mathematical invariant or eliminating the expensive high-precision state.
+
+Correctness depends on the supplied mathematical argument, complete prime
+information during initialization, and the arithmetic library's correctness.
+The emitted numerical records are useful diagnostics. They are not standalone
+proof certificates that an independent theorem prover can replay.
+
+OBSERVED EXACT SUCCESSOR STREAMS
+
+Starting at one, the recorded stream begins:
+2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71.
+
+Starting at 113, the recorded immediate successors are:
+127, 131, 137, 139, 149, 151, 157, 163, 167, 173.
+
+Starting at 997, the recorded immediate successors are:
+1009, 1013, 1019, 1021, 1031, 1033, 1039, 1049, 1051, 1061.
+
+Step-by-step enclosures and work counters are in results/example_traces.json.
+The final executable-command check separately verified the stream from 113
+using trial division after analytic generation. That check is recorded in
+results/cli_smoke.json. Verification is not part of the analytic transition and
+its cost is excluded from generation timings explicitly.
+
+MEASURED ANALYTIC PERFORMANCE
+
+The following are medians of three repetitions, including initialization and
+all requested advances. Method order rotated between repetitions. Native
+process caches remained available. The bytearray sieve is the Python reference
+implemented in this package, not an optimized native production library.
+
+Starting at one and generating 200 successors, the original analytic method
+took 0.054956 seconds. The precision-aware version took 0.028716 seconds, an
+improvement by a factor of 1.91. The bytearray sieve took 0.000287 seconds.
+
+Starting at 113 and generating 100 successors, the original method took
+0.017185 seconds. The precision-aware version took 0.009150 seconds, an
+improvement by a factor of 1.88. The bytearray sieve took 0.000180 seconds.
+
+Starting at 997 and generating 30 successors, the original method took
+0.055471 seconds. The precision-aware version took 0.026031 seconds, an
+improvement by a factor of 2.13. The bytearray sieve took 0.000121 seconds.
+
+Starting at 10007 and generating ten successors, the original method took
+8.118136 seconds. The precision-aware version took 3.313460 seconds, an
+improvement by a factor of 2.45. The bytearray sieve took 0.000138 seconds.
+The improved analytic version was about 24000 times slower than that sieve in
+this case. Small timings are environment-sensitive and should be interpreted
+as measurements of this implementation, not universal constants.
+
+The complete measurements, individual runs, source hashes, output streams,
+and independent output comparisons are in results/optimized_benchmarks.json.
+An earlier benchmark series, including separate block-sieve and scalar
+primality-test comparisons, is in results/exact_benchmarks.json and its CSV.
+
+WHAT THE COSTS REVEAL
+
+At the starting prime 10007, analytic initialization constructs a prefix of
+1230 primes and uses 640704 bits of working precision. The tiny remainder
+contains the answer, but obtaining it from a state near one requires retaining
+many digits. For this conservative implementation, working precision grows
+roughly as the numerical location multiplied by its logarithm. Relative to the
+number of digits in the input, this is an exponential growth problem.
+
+Most of the largest measured runtime goes into building the Euler product.
+The optimized version's median initialization was approximately 3.25 seconds;
+advancing ten times after initialization took approximately 0.063 seconds.
+These component medians are measured separately and need not sum exactly to
+the median total. Even the subsequent advances remain expensive compared with
+the sieve in this regime.
+
+The numerical state is reusable, but this implementation also stores every
+preceding prime for later exponent rebuilds. An arbitrary starting prime is
+supported within declared resource limits; entering there cheaply is not
+solved. The initialization explicitly generates all preceding primes instead
+of treating that history as free input. Default analytic limits cap the seed
+at 100000 and working precision at 8000000 bits.
+
+The analytic wrapper records zero future-candidate primality tests in its
+transitions. That accounting does not mean the library performs no work on
+integers internally, nor does it imply that information has been obtained for
+free. The total arithmetic time is the relevant comparison.
+
+THE WEIGHTED-HISTORY EXPERIMENT
+
+A separate experiment tested whether weighted arithmetic history improves
+one-step prediction of the exact next-prime gap. Features included the
+preceding 32 prime gaps, logarithmic normalization, uniform and exponential
+weights, and weights that increase by one for each backward step. The study
+also included histories over the preceding 8, 16, 32, 64, and 128 integers,
+using logarithmic prime-power weights and counts of distinct prime factors.
+
+The comparison separated a position-only predictor, a predictor using known
+small-prime divisibility information, and the same divisibility information
+with weighted history added. A simple arithmetic control chose the first
+following number not divisible by any prime through thirteen.
+
+The fitted models used fixed-seed tree ensembles. Their settings were selected
+on an earlier validation range. Training contained 48930 examples with current
+primes from 1000 to below 600000. Validation contained 14853 examples from
+600000 to below 800000. The first test range contained 21763 examples from
+800000 to below 1100000. A farther holdout contained 27806 examples from
+1600000 through 2000000. Neither holdout supplied labels for model fitting.
+
+Exact successor accuracy in the first test range, followed by the farther
+holdout, was as follows:
+
+Position only: 16.19 percent and 15.22 percent.
+Divisibility information: 36.69 percent and 35.19 percent.
+Divisibility information plus weighted history: 36.87 percent and 35.37 percent.
+Simple first-survivor arithmetic control: 37.04 percent and 35.58 percent.
+
+Weighted history added approximately 0.18 percentage points against the fitted
+divisibility predictor in both ranges. It did not beat the simpler arithmetic
+control on exact successor accuracy. Its mean absolute gap error was also
+slightly worse than the fitted divisibility predictor, although slightly better
+than the simple control. This is evidence about these features and numerical
+ranges; it does not establish that every possible historical representation
+fails or that the observed small gain persists at arbitrary magnitudes.
+
+All forecasts were supplied with the true current prime and true preceding
+history. These are one-step results, not repeated autonomous generation using
+the predictor's own outputs. The fitted classifiers cannot predict a gap class
+absent from their training data. Their unseen-class rates are recorded.
+
+The elementary control was added after the exploratory first run to determine
+whether the fitted models improved on basic arithmetic. No features, model
+settings, or fits were revised after seeing the holdout scores. The study is
+exploratory, not a preregistered confirmatory experiment.
+
+An independent sieve supplied ground truth. Its setup cost and the cost of
+constructing history features are recorded. A leakage check deliberately
+changed future data after a chosen current prime: the next-gap label changed
+while all features remained unchanged. This verifies the tested cutoff, not
+an abstract guarantee about every conceivable future feature implementation.
+
+Raw forecasts, exact-gap errors, full settings, limitations, and exploratory
+paired comparisons are included in results/history_predictions.csv,
+results/history_metrics.csv, and results/history_results.json. The raw files
+cover 49569 held-out forecasts per method.
+
+VALIDATION AND REPRODUCIBILITY
+
+The final validation run passed all 26 tests with zero failures or errors.
+The analytic and optimized methods were checked against independently computed
+successors, including the first 200 primes and several nonzero entry points.
+The suite also covers exponent changes, resource-limit refusal and recovery,
+deliberately broad interval rejection, overlap between the two arithmetic
+implementations, sieve boundaries, checkpoint validation, and invalid inputs.
+The baseline suite includes longer streams and entry near one billion.
+
+The executable command for the optimized method returned the expected ten
+successors from 113 and passed independent trial-division verification. Hashes
+of the three benchmarked implementation files match the files shipped in the
+package. The validation log and machine-readable summary are in results.
+
+The recorded exact-engine environment used Python 3.12.14 and python-flint
+0.9.0 on x86-64 Linux. The history experiment used NumPy 2.3.5 and
+scikit-learn 1.8.0. Dependencies and full reproduction commands are in README.md,
+requirements.txt, and requirements-experiments.txt. The code, experiment
+scripts, tests, proof notes, and raw outputs are included; installed third-party
+libraries are not bundled.
+
+WHAT WOULD CONSTITUTE THE NEXT ADVANCE
+
+The first target is a representation that exposes the successor with far fewer
+bits. A useful new weight system needs a mathematical extraction rule, a cheap
+way to construct its state, and an economical update. Merely placing the
+answer inside a high-precision constant does not reduce the work.
+
+The second target is affordable initialization at an arbitrary large prime.
+The current complete-prefix requirement must be removed or substantially
+reduced. Proposed alternatives must account for their own arithmetic, storage,
+and certification costs. A speedup with a fully prepared state does not by
+itself solve arbitrary entry.
+
+The third target is a new, independently evaluated family of historical
+transformations. Any such experiment should retain the elementary arithmetic
+control, freeze its choices before evaluating new magnitude ranges, and
+distinguish isolated prediction from repeated exact generation. More weights
+alone do not establish a useful recurrence.
+
+The package now supplies an exact update rule, a finite extraction argument,
+numerical checks, and measured failures of the hoped-for efficiency. The next
+research question is which arithmetic representation can preserve immediate
+succession while substantially reducing setup, state size, and update cost.
+
+SOURCES AND ATTRIBUTION
+
+Solomon W. Golomb, Formulas for the next prime, Pacific Journal of Mathematics,
+1976. Primary source for the analytic family and weighted-distribution view.
+https://msp.org/pjm/1976/63-2/pjm-v63-n2-p11-p.pdf
+
+Artur Kawalec, The recurrence formulas for primes and non-trivial zeros of the
+Riemann zeta function, version three, 2021. Related analytic recurrences and
+numerical investigations; a preprint, not evidence of an efficient breakthrough.
+https://arxiv.org/abs/2009.02640
+
+Jonathan Sorenson, Two compact incremental prime sieves, 2015. Context for
+established algorithms that carry arithmetic state between outputs.
+https://www.cambridge.org/core/journals/lms-journal-of-computation-and-mathematics/article/two-compact-incremental-prime-sieves/8C93ED669EABD7C3074BD44BC487747F
+
+FLINT documentation, Ball arithmetic. The numerical enclosure contract used
+by the analytic implementation.
+https://flintlib.org/doc/guide/types/ball-arithmetic.html
+
+Python-FLINT documentation, arb. The real ball arithmetic interface.
+https://python-flint.readthedocs.io/en/stable/arb.html
+
+All performance and predictive-accuracy figures in this report are measurements
+from this package's own recorded experiments. They are not literature claims.
