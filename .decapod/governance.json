@@ -3,55 +3,6 @@
   "baseline": {
     "accepted_commit": "cd1d0ed339ce65d0f531bf491c3a6d7ebeb46fb3",
     "unresolved": {
-      "history-recovery:feefdfcf3fb9015f094db5de0b6c28b998c1130c": {
-        "actor": "primeward-record",
-        "assessment": {
-          "base_commit": "cd1d0ed339ce65d0f531bf491c3a6d7ebeb46fb3",
-          "disposition": "unproven_history",
-          "findings": [
-            {
-              "code": "GOVERNANCE_CHECKPOINT_MISSING",
-              "commit": "4e4346cd772628d29a0d4f2e857e781db4a43ec1",
-              "detail": "GOVERNANCE_CHECKPOINT_MISSING: commit 4e4346cd772628d29a0d4f2e857e781db4a43ec1 needs a new checkpoint bound to its exact material tree and governance inputs",
-              "disposition": "unproven_history",
-              "expected_input_digest": "sha256:13b8f97620a9273fab960594fe22be372a9f22cc4e53641b603fa9fcca685317",
-              "obligation": "checkpoint_for_material",
-              "prior_event_can_be_regenerated": false,
-              "recovery": "A checkpoint written now cannot establish that this immutable commit carried a checkpoint. Preserve the source ref and evidence; create a fresh claimed workspace from the accepted target, reauthor the reviewed material with current intent/spec reviews and checkpoints, and rerun independent validation. No current policy authorizes a candidate-local history waiver.",
-              "tree": "c5876092248e586bbe01ff79b09ba1abee933608"
-            },
-            {
-              "code": "GOVERNANCE_CHECKPOINT_MISSING",
-              "commit": "feefdfcf3fb9015f094db5de0b6c28b998c1130c",
-              "detail": "GOVERNANCE_CHECKPOINT_MISSING: commit feefdfcf3fb9015f094db5de0b6c28b998c1130c needs a new checkpoint bound to its exact material tree and governance inputs",
-              "disposition": "unproven_history",
-              "expected_input_digest": "sha256:d771f952f2d156a1420bfc3e4415368e2dab34fe952524da6c34b9284c0c8cf5",
-              "obligation": "checkpoint_for_material",
-              "prior_event_can_be_regenerated": false,
-              "recovery": "A checkpoint written now cannot establish that this immutable commit carried a checkpoint. Preserve the source ref and evidence; create a fresh claimed workspace from the accepted target, reauthor the reviewed material with current intent/spec reviews and checkpoints, and rerun independent validation. No current policy authorizes a candidate-local history waiver.",
-              "tree": "7af15d5f7866daabf9566afade2f47306de0f08b"
-            }
-          ],
-          "head_commit": "feefdfcf3fb9015f094db5de0b6c28b998c1130c",
-          "history_proven": false,
-          "inspection_complete": true,
-          "publication_ready": false,
-          "schema": "decapod.checkpoint-history.v1",
-          "scope": "checkpoint_history",
-          "verified_commits": []
-        },
-        "authority": "current_task_custody_only",
-        "destination_base": "cd1d0ed339ce65d0f531bf491c3a6d7ebeb46fb3",
-        "destination_change": "change_01M7Y9PDB3EMZEDG5KN8F5QFV1",
-        "exception_authorized": false,
-        "historical_proof": "not_proven",
-        "reason": "Reauthor reviewed experiment results from accepted main; preserve missing-checkpoint history without claiming retrospective proof.",
-        "recovery": "reauthor_and_obtain_fresh_proof",
-        "schema": "decapod.history-recovery.v1",
-        "source_commit": "feefdfcf3fb9015f094db5de0b6c28b998c1130c",
-        "source_governance_blob": "970160e50eaca94ff091b72c2b95aaf6ec1862be",
-        "source_tree": "7af15d5f7866daabf9566afade2f47306de0f08b"
-      },
       "trajectory:322cb903c031fdd4": "Synthetic finite physics models require stated units and truncations. Exact prime recovery uses the existing Arb engine; floating-point models do not inherit its certificate.",
       "trajectory:488dea8df09eba13": "The compact runtime has 102 measured files including a standard-library ZIP, native Python/modules, system libraries and a complete scientific dependency archive. The immutable proof entry point extracts only regular files/directories inside owned scratch, disables ambient site processing and passes the extracted package path to child Python. Import diagnostic confirmed NumPy 2.3.5, SciPy 1.17.0, python-flint 0.9.0 and Matplotlib 3.10.8. This supersedes the earlier unpacked-runtime declaration.",
       "trajectory:4ca3ce6f77bd02a0": "The dedicated Python runtime closure includes the complete cache-free standard library, installed scientific dependencies excluding their unused tests/benchmarks/pip, package data, linked shared libraries and locale files: 3775 canonical files, 301390266 bytes. PYTHONHOME/PYTHONPATH select this runtime; PATH is empty and bytecode writes are disabled. Completeness is an authored review assertion. GitHub CI executes Python checks explicitly; local validation does not assert that hosted CI has run."
@@ -62,6 +13,16 @@
     "base_commit": "cd1d0ed339ce65d0f531bf491c3a6d7ebeb46fb3",
     "target_base": "origin/main"
   },
+  "resolutions": {
+    "history-recovery:feefdfcf3fb9015f094db5de0b6c28b998c1130c": {
+      "obligation_digest": "sha256:80589d2541fbd41d4fea71a46b73cd44db10a072d581b52c4187bd7cb2c83a8b",
+      "resolution": "Reviewed source was reauthored in the fresh accepted-base workstream and archived in 524b92ba5cb6fc5e4f85d32b79ef8749d1f5f924 with a verified in-commit artifact checkpoint. Old commits remain unproven and preserved; this resolution does not claim retrospective proof.",
+      "proof_refs": [
+        "524b92ba5cb6fc5e4f85d32b79ef8749d1f5f924",
+        "https://github.com/alexhraber/primeward/actions/runs/44870723187"
+      ]
+    }
+  },
   "checkpoints": [
     {
       "id": "record-successor-recovery-material-v1",
@@ -70,6 +31,14 @@
       "proof_refs": [
         "feefdfcf3fb9015f094db5de0b6c28b998c1130c",
         "https://github.com/alexhraber/primeward/actions/runs/44870723187"
+      ]
+    },
+    {
+      "id": "record-successor-recovery-resolution-v1",
+      "summary": "Record current evidence that reviewed experiment material was reauthored with a valid checkpoint; retain historical failure without retrospective approval",
+      "input_digest": "sha256:98e30fe2ab54f4bc9465e2de76b5b8bdd739249e99c761034efbadd578a17aed",
+      "proof_refs": [
+        "524b92ba5cb6fc5e4f85d32b79ef8749d1f5f924"
       ]
     }
   ],
