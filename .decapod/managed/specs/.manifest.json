@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.1.0",
+  "template_version": "scaffold-v5",
+  "generated_at": "1795227098Z",
+  "repo_signal_fingerprint": "a939ceaabf37bca72f428414f712b320816d02f1411e24524ec193d9be110023",
+  "declared_capabilities": [
+    "certified_prime_succession",
+    "numerical_physics_applications"
+  ],
+  "capability_definition_version": "1.0.0",
+  "config_input_hash": "374167457f9ffbce6c9596402a96b058cf897e4d085c9afc197fcf13a13597a0",
+  "spec_input_hash": "3f1ac0b7a0ea14748b99e534e221f9ad65faa614911c3f57ea38bfb267dae7ff",
+  "decapod_release": "0.156.1",
+  "entrypoints": [
+    {
+      "path": "AGENTS.md",
+      "template_hash": "4579f18cb78a6ef8dc9c73fa886cdc1977d69d0dcf13935318890e1445431135",
+      "content_hash": "4579f18cb78a6ef8dc9c73fa886cdc1977d69d0dcf13935318890e1445431135",
+      "fingerprint": "40b0d6eade0e621a1070bf4a116f836a398c79f1864a5d4d9ed93dd34ea9ff4b"
+    },
+    {
+      "path": "CLAUDE.md",
+      "template_hash": "5120421a56e24cb9669270f404b30cd50480151d5440224f71a86214a20a8b0a",
+      "content_hash": "5120421a56e24cb9669270f404b30cd50480151d5440224f71a86214a20a8b0a",
+      "fingerprint": "3ecaece5fb4018b18c0127e3b4543507aa319b4db05b6d0ddaae227ee11b6b12"
+    },
+    {
+      "path": "GEMINI.md",
+      "template_hash": "caf0b9c332cd08183d5e78db69cd7a8976275645e674c86361fc55da00bbd7ec",
+      "content_hash": "caf0b9c332cd08183d5e78db69cd7a8976275645e674c86361fc55da00bbd7ec",
+      "fingerprint": "1d3c6f7a1e0515b92155eba0ee00045e0985bf241c6fb09ea2aba702baed9f1c"
+    },
+    {
+      "path": "CODEX.md",
+      "template_hash": "e5d5cdc5d3b8f5e1496eccdb00ba2f7ce5610dbfeaffe9fbd95045b7d07802b0",
+      "content_hash": "e5d5cdc5d3b8f5e1496eccdb00ba2f7ce5610dbfeaffe9fbd95045b7d07802b0",
+      "fingerprint": "9454966020b06229baed0bee0b0b4bb9b843fd1e36ae1085d7a8a8ca929a576c"
+    }
+  ],
+  "files": [
+    {
+      "path": ".decapod/managed/specs/README.md",
+      "template_hash": "b358df067b0eb696799115894930952913428aef8f4bfd7a029a51ee77b23fe2",
+      "content_hash": "b358df067b0eb696799115894930952913428aef8f4bfd7a029a51ee77b23fe2",
+      "fingerprint": ""
+    },
+    {
+      "path": ".decapod/managed/specs/INTENT.md",
+      "template_hash": "b26d712ed36e065fbaf878830f49ce3b44814e31197d9fc635468727fb59a275",
+      "content_hash": "b26d712ed36e065fbaf878830f49ce3b44814e31197d9fc635468727fb59a275",
+      "fingerprint": ""
+    },
+    {
+      "path": ".decapod/managed/specs/ARCHITECTURE.md",
+      "template_hash": "e9d3b03a04fa48a9a039e5240ee9a93bf59ba248da18b606f053b2c3ae3cd8d3",
+      "content_hash": "e9d3b03a04fa48a9a039e5240ee9a93bf59ba248da18b606f053b2c3ae3cd8d3",
+      "fingerprint": ""
+    },
+    {
+      "path": ".decapod/managed/specs/INTERFACES.md",
+      "template_hash": "e98acbc7e6daaea319014a747941ca11570774b05b952441fe27d76bf1a021ba",
+      "content_hash": "e98acbc7e6daaea319014a747941ca11570774b05b952441fe27d76bf1a021ba",
+      "fingerprint": ""
+    },
+    {
+      "path": ".decapod/managed/specs/VALIDATION.md",
+      "template_hash": "62c0e0bd6bde86c708eb564a2e4cf270bc6f4e9b7919e3a6d6d49084c119ea89",
+      "content_hash": "62c0e0bd6bde86c708eb564a2e4cf270bc6f4e9b7919e3a6d6d49084c119ea89",
+      "fingerprint": ""
+    },
+    {
+      "path": ".decapod/managed/specs/SEMANTICS.md",
+      "template_hash": "9f6582079897272c538472e9c90e20e58f896ca0af4e56c1fffab29884164acd",
+      "content_hash": "9f6582079897272c538472e9c90e20e58f896ca0af4e56c1fffab29884164acd",
+      "fingerprint": ""
+    },
+    {
+      "path": ".decapod/managed/specs/OPERATIONS.md",
+      "template_hash": "3540aba12797c43f1852ffcf89998540ec8d30ffae1bc11d3ceaff7e4f452899",
+      "content_hash": "3540aba12797c43f1852ffcf89998540ec8d30ffae1bc11d3ceaff7e4f452899",
+      "fingerprint": ""
+    },
+    {
+      "path": ".decapod/managed/specs/SECURITY.md",
+      "template_hash": "42d3d0991137c30620df26a7187f9e8e1fba78ce1f8dd0a09a92685d0226c801",
+      "content_hash": "42d3d0991137c30620df26a7187f9e8e1fba78ce1f8dd0a09a92685d0226c801",
+      "fingerprint": ""
+    }
+  ]
+}

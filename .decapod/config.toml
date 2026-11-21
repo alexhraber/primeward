@@ -1,0 +1,65 @@
+schema_version = "1.0.0"
+
+[context]
+declared_sources = [
+    "README.md",
+    "research/fast_analytic_theory.md",
+]
+
+[custody]
+isolation = "worktree"
+
+[governance]
+approval_categories = ["destructive_operations"]
+protected_paths = []
+
+[init]
+ci = true
+diagram_style = "mermaid"
+entrypoints = [
+    "AGENTS.md",
+    "CLAUDE.md",
+    "GEMINI.md",
+    "CODEX.md",
+]
+specs = true
+
+[proof]
+validation_buildkite_preflights = false
+
+[[proof.commands]]
+args = []
+command = "python3 -m applications verify"
+description = "Guided init proof command 2"
+name = "application_examples"
+required = true
+
+[[proof.commands]]
+args = []
+command = "python3 -m unittest discover -s tests -v"
+description = "Guided init proof command 1"
+name = "unit_tests"
+required = true
+
+[repo]
+architecture_direction = "A Python core for certified arithmetic and independent applications for thermodynamics, spectral recovery, scattering, wave transport, inverse quantum spectra, and finite spectral models."
+backend = "local"
+base_branch = "main"
+container_workspaces = false
+declared_capabilities = [
+    "certified_prime_succession",
+    "numerical_physics_applications",
+]
+detected_surfaces = [
+    "cli",
+    "library",
+]
+done_criteria = "Core correctness tests and application numerical checks pass; all applications run from the CLI; assumptions and numerical limits are documented."
+external_tracker = false
+primary_languages = ["Python"]
+product_name = "Primeward"
+product_summary = "Exact prime succession through reusable arithmetic state, with reproducible numerical physics applications."
+product_type = "service_or_library"
+
+[tracker]
+provider = "decapod"
