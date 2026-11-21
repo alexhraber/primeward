@@ -77,9 +77,9 @@ when relevant code reaches main. Defaults are 200,000 candidate offsets
 and a factor ceiling of 2,000,000, with an explicit 10-minute job
 timeout. The Python code limits inputs even when dispatched manually.
 
-The workflow runs independent checks for certified small successors:
+The template runs independent checks for certified small successors:
 31 to 37, 127 to 131, and 8191 to 8209, as well as the finite
-Gaussian trace check, and uploads JSON outputs as artifacts.
+Gaussian trace check, and would upload JSON outputs as artifacts if separately approved and installed.
 
 A successful run means that these bounded experiments completed and
 were checked. It does not constitute discovery of a record prime.

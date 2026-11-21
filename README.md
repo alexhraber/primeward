@@ -211,7 +211,7 @@ The [record experiment](research/record_successor.md) ran the actual M136279841 
 
 ### Record-scale successor experiments
 
-The [bounded next-prime workflow](.github/workflows/primeward-successor-experiment.yml)
+The [bounded next-prime workflow template](research/actions/primeward-successor-experiment.yml)
 screens candidate offsets above the record Mersenne prime using small-prime
 modular arithmetic, and separately tests a finite orbital trace identity.
 Its reports distinguish composite witnesses, certified small successors,

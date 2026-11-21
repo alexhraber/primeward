@@ -1,3 +1,6 @@
+# CI-only workflow template. Not active until reviewed and explicitly
+# approved as a new workflow in the repository's Decapod policy.control
+# transition, then moved into .github/workflows.
 name: Primeward Next-Prime Experiment
 on:
   workflow_dispatch:
@@ -20,7 +23,7 @@ on:
   push:
     branches: [main]
     paths:
-      - '.github/workflows/primeward-successor-experiment.yml'
+      - 'research/actions/primeward-successor-experiment.yml'
       - 'experiments/record_gap.py'
       - 'experiments/orbital_trace.py'
       - 'tests/test_record_gap.py'

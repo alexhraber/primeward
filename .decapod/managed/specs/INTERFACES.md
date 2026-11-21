@@ -45,7 +45,7 @@ interval-arithmetic or prime-certification result.
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `52562308a97b5c481078238af8c56bcb900e33b025636d59584043066cde24ea`
-- Significant implementation surfaces: `.github/` (2 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (7 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (11 files)
+- Repository signal fingerprint: `a0e7b140dd1dc81cfc14087a52a8a3e3fc46a278313c71c9de905c516c0f77d0`
+- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (7 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (11 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->

@@ -50,6 +50,15 @@
         ".github/workflows/primeward-successor-experiment.yml",
         "tests/test_record_gap.py"
       ]
+    },
+    {
+      "id": "primeward-protected-ci-03",
+      "summary": "Keep optional workflow as research template, preserve accepted CI and add full record-scale test in existing GitHub Actions",
+      "input_digest": "sha256:e278dfc564c60f39ad55a3f46c7486074dfe420bac9c4564012a715b006aa3d2",
+      "proof_refs": [
+        "research/actions/primeward-successor-experiment.yml",
+        "tests/test_record_gap.py"
+      ]
     }
   ],
   "intents": {
@@ -99,22 +108,22 @@
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/ARCHITECTURE.md",
-          "reason": "Recorded new modular-sieve and finite orbital-trace computational lanes, distinct from the exact analytic engine.",
-          "reviewed_code_fingerprint": "52562308a97b5c481078238af8c56bcb900e33b025636d59584043066cde24ea",
-          "spec_material_hash": "0395c90361a548057d2f07d38b58f912335f5abd1e8b560f16b8fbb63a5c2408"
+          "reason": "Reviewed modular successor computation and finite orbital trace with existing required CI proof preserved.",
+          "reviewed_code_fingerprint": "a0e7b140dd1dc81cfc14087a52a8a3e3fc46a278313c71c9de905c516c0f77d0",
+          "spec_material_hash": "5b5901c16dd2d270ffa83222e7feb3312777536f6ed53bbb266f38a6c6af9331"
         },
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/INTERFACES.md",
-          "reason": "Defined bounded CLI parameters, documented JSON status and certification semantics.",
-          "reviewed_code_fingerprint": "52562308a97b5c481078238af8c56bcb900e33b025636d59584043066cde24ea",
+          "reason": "Reviewed strict finite-certificate statuses and symbolic record-scale result reporting.",
+          "reviewed_code_fingerprint": "a0e7b140dd1dc81cfc14087a52a8a3e3fc46a278313c71c9de905c516c0f77d0",
           "spec_material_hash": "240e1ed9f454b9c297c07da36e11a25b53b1d70b0b6c85db916e81efcf04e683"
         },
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/SECURITY.md",
-          "reason": "Documented read-only manually dispatchable workflow and separation from mandatory CI proof.",
-          "reviewed_code_fingerprint": "52562308a97b5c481078238af8c56bcb900e33b025636d59584043066cde24ea",
+          "reason": "Preserved unmodified CI contract; quarantined optional workflow template pending explicit policy transition authority.",
+          "reviewed_code_fingerprint": "a0e7b140dd1dc81cfc14087a52a8a3e3fc46a278313c71c9de905c516c0f77d0",
           "spec_material_hash": "2e527d283114c27ed2f2f57021db91b0c9a4593855073717f9f56095e69f3825"
         }
       ],
@@ -126,7 +135,7 @@
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1795241743Z"
+      "updated_at": "1795241931Z"
     },
     "trajectory": {
       "active_boundaries": [

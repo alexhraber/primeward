@@ -54,6 +54,16 @@ class MersenneScreenTests(unittest.TestCase):
         self.assertEqual(r["composite_witness_samples"][1]["offset_k"], 2)
         self.assertEqual(r["composite_witness_samples"][1]["divisor"], 5)
 
+    def test_full_record_screen_runs_with_existing_ci(self):
+        # This runs under the repository's existing mandated GitHub CI job.
+        # A candidate that survives is never called prime at the record scale.
+        result = screen(136_279_841, span=200_000, trial_limit=2_000_000)
+        self.assertEqual(result["candidates_proven_composite"], 184_458)
+        self.assertEqual(result["candidates_not_excluded"], 15_542)
+        self.assertEqual(result["first_unexcluded_offset_k"], 11)
+        self.assertFalse(result["successor_certified"])
+        self.assertIsNone(result["successor"])
+
     def test_all_composite_status(self):
         r = screen(5, span=2, trial_limit=100)
         self.assertEqual(r["status"], "all_screened_candidates_composite")

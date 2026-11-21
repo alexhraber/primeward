@@ -10,57 +10,52 @@
     {
       "path": ".decapod/managed/specs/.manifest.json",
       "bytes": 4001,
-      "sha256": "446d454fac012500a0299577375e0089f818bb1c89867f6bb4ef6b95cd025144"
+      "sha256": "56d69fc58f414161b3d0a175d28c1562ec47b6168cba80661ee905020eb68096"
     },
     {
       "path": ".decapod/managed/specs/ARCHITECTURE.md",
-      "bytes": 5932,
-      "sha256": "518048daae5614c002a6a2b7d6277fa5d983681bb529058b4c7e27a3d704a47a"
+      "bytes": 5928,
+      "sha256": "e0a7fb0bd1e4fbfa3e1db2bd44254c8e22180c7127b83b17874f2b3633c095cd"
     },
     {
       "path": ".decapod/managed/specs/INTENT.md",
       "bytes": 3388,
-      "sha256": "2e56d248ec79c9d5bce548122291b521cf6dfcdd110e3fc2836ee34d1ca3f9ff"
+      "sha256": "2aeb8a006af02527d7df29b48ead97618459e20d670a6c4c0d6951cdae338c72"
     },
     {
       "path": ".decapod/managed/specs/INTERFACES.md",
       "bytes": 4192,
-      "sha256": "1061dde14de1614ce42a89ec93879549bb1b6933337e531df4fe0dc972be6466"
+      "sha256": "61719edac961d90f36792c888852473276c69d3b0679d2469eafe2b57c7f794a"
     },
     {
       "path": ".decapod/managed/specs/OPERATIONS.md",
       "bytes": 5415,
-      "sha256": "d3d43fddd8082eb56b531aff907dc88c1c04bf00e4fdc69e9eef3ce395bba3cd"
+      "sha256": "0069ec05a1d2b7252f8d3a3ec3f84912e0d86eae74acd57f373c13ad00f212e9"
     },
     {
       "path": ".decapod/managed/specs/README.md",
       "bytes": 1464,
-      "sha256": "efadf537e6e88aa5f398d474e9f3ba4201e53d5288acda329120a51ca64a4c0f"
+      "sha256": "2ec296c3729caaf82dfd33b19cdc4817c58ea020526d5ca6b2195983783e729a"
     },
     {
       "path": ".decapod/managed/specs/SECURITY.md",
       "bytes": 4660,
-      "sha256": "43505a9415d686dcb7012f08565336c99822680c08c613cc1388335cf850c5af"
+      "sha256": "9ca484a2b02481488420265bffe4985861712b01690a794d667024d4159d70bc"
     },
     {
       "path": ".decapod/managed/specs/SEMANTICS.md",
       "bytes": 3682,
-      "sha256": "fd673f1e5f9ab97c016bdf838bfa5edbc12c86c94941be9b0a9345b905769616"
+      "sha256": "5678f2779aa11058af381c90d1c76693521b645c1b82451e7f5949c00a68ab37"
     },
     {
       "path": ".decapod/managed/specs/VALIDATION.md",
       "bytes": 4685,
-      "sha256": "3455f4a37ec0d028c2ecb016b1a08aaf7528b9f8daec2fc78079786d376b2e70"
+      "sha256": "c776d9389dc2bb117c65451ba6b8b4dc08d7e49976af44728792d251abb71ae0"
     },
     {
       "path": ".github/workflows/decapod-validate.yml",
       "bytes": 3501,
       "sha256": "e3600bc8dcc7a420d7097ffb0daa9fc61f1e073edea5a94fe807c465ca4a4fc8"
-    },
-    {
-      "path": ".github/workflows/primeward-successor-experiment.yml",
-      "bytes": 3347,
-      "sha256": "2f04b868cea3a5a4499e882ed3805f182e2d0d8b507ee1a71f288485eb66fe5a"
     },
     {
       "path": ".gitignore",
@@ -89,8 +84,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11732,
-      "sha256": "c69e41fefacf8713bbc828dfe49500ebbaff93a684197ee5370a7b48ce8509a7"
+      "bytes": 11740,
+      "sha256": "ec92c58fbd4b0372fd45a9007b1dee550b869f7870e922faf54e8202bc9aae24"
     },
     {
       "path": "applications/README.md",
@@ -348,6 +343,11 @@
       "sha256": "4cef508304e84c21f73cf412712165dc26e40978cb784bc08a876948b559d90d"
     },
     {
+      "path": "research/actions/primeward-successor-experiment.yml",
+      "bytes": 3537,
+      "sha256": "34ac563b427b628d733f45c26f9b4c1912da39e352acbc5051552b6a7f2c1ffd"
+    },
+    {
       "path": "research/fast_analytic_theory.md",
       "bytes": 7069,
       "sha256": "8b6ee3ec037d01b0d45eeca5026a88e20863afccb95c55ad0f0ef11df4837a97"
@@ -369,8 +369,8 @@
     },
     {
       "path": "research/record_gap_and_trace.md",
-      "bytes": 4491,
-      "sha256": "1d9921fe4d058fc23896e795545200f925ff607a11710aab73e2b650cd44bc01"
+      "bytes": 4533,
+      "sha256": "67da8e0a47613e6acceabdc7f96561f7bf9a20fb5097eb653daf16be0bd74ebd"
     },
     {
       "path": "research/record_gap_runs/2026-11-20/orbital_trace.json",
@@ -534,8 +534,8 @@
     },
     {
       "path": "tests/test_record_gap.py",
-      "bytes": 3808,
-      "sha256": "5909b4f92a2aad9280baa2459243916028631aa89d9a72d739c9f0bd6acc9395"
+      "bytes": 4409,
+      "sha256": "d60d241fbf80fb54df98afba71aeafb6880dfa4421599396a72c8cea8a85512e"
     },
     {
       "path": "tests/test_record_successor.py",
