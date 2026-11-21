@@ -2,7 +2,7 @@
 
 Research into exact prime succession through reusable arithmetic state.
 
-Version 0.1. Research snapshot prepared on November 20, 2026.
+Version 0.2.0.
 
 This package makes the proposed stateful prime-successor project executable and
 testable. The analytic engine computes exact immediate successors from a
@@ -14,6 +14,8 @@ The construction does not depend on the Riemann Hypothesis.
 
 ## What is included
 
+- `prime_successor/fast_analytic.py`: residual-state engine with a smaller
+  exponent, an interval check for epoch reuse, and reduced transition precision.
 - `prime_successor/analytic.py`: finite Euler-product extraction, explicit unit
   state, numerical enclosure checks, epoch updates, and cost counters.
 - `prime_successor/optimized.py`: the same exact rule with less precision spent
@@ -24,10 +26,16 @@ The construction does not depend on the Riemann Hypothesis.
   history, including a weight that increases by one with each backward step.
 - `experiments/benchmark.py`: exact-engine timings, separately charging
   initialization and subsequent advances.
+- `experiments/benchmark_successors.py`: comparisons with paid initialization,
+  a following warm batch, and several sieve block sizes. FLINT caches are
+  cleared between fresh runs by default.
+- `research/fast_analytic_theory.md`: proofs of the sharper odd-tail bound,
+  the epoch acceptance check, and the residual update.
 - `research/theory_review.md`: the invariant, finite extraction proof,
   nearest-odd conditioning argument, and limitations, written in English.
 - `research/findings.txt`: the complete research findings, measured comparisons,
-  validation record, and next research targets in plain English.
+  validation record, and research targets from the initial version.
+- `research/performance.md`: version 0.2 measurements and remaining costs.
 - `results/`: measured results and raw predictions. Timings are observations
   from the recorded environment, not portable performance guarantees.
 - `tests/`: independent arithmetic comparisons, boundary cases, resource-limit
@@ -40,19 +48,22 @@ dependency and run from this directory:
 
 ```sh
 python3 -m pip install -r requirements.txt
-python3 -m prime_successor --method analytic --start 113 --count 10 --json
+python3 -m prime_successor --method residual --start 113 --count 10 --json
 ```
 
 The successors are 127, 131, 137, 139, 149, 151, 157, 163, 167, and 173.
 The last enclosure and all work counters are included in JSON output.
 
-Use `--method optimized` for the measured mixed-precision variant. It retains
-the same mathematical invariant and enclosing arithmetic acceptance checks.
+The residual engine is the default. Use `--method analytic` for the original
+implementation or `--method optimized` for the first mixed-precision version.
+All three calculate exact successors
+from the same Euler-product identity and check numerical enclosures before
+accepting an answer.
 
 Start at the multiplicative identity:
 
 ```sh
-python3 -m prime_successor --method analytic --start 1 --count 20
+python3 -m prime_successor --method residual --start 1 --count 20
 ```
 
 One is represented explicitly and is never called prime. The analytic unit
@@ -63,10 +74,35 @@ For a separate small-input correctness check, add `--verify`. That option runs
 an independent trial-division successor search after the analytic calculation;
 its verification work is deliberately not part of the analytic engine itself.
 
+## Measured performance
+
+The residual engine is 4.3–20.9 times faster than the previous optimized
+implementation on the four workloads below, including initialization and any
+rebuilds during the requested batch. It still takes more time than the sieve.
+
+| Starting value | Successors | Previous optimized | Residual | Fastest compared sieve |
+| ---: | ---: | ---: | ---: | ---: |
+| 1 | 200 | 27.722 ms | 5.472 ms | 0.196 ms |
+| 113 | 100 | 10.427 ms | 2.410 ms | 0.110 ms |
+| 997 | 30 | 27.128 ms | 2.388 ms | 0.064 ms |
+| 10,007 | 10 | 3,460.858 ms | 165.821 ms | 0.061 ms |
+
+These are medians of five runs on the recorded machine. Each run creates a
+fresh engine after clearing FLINT's internal caches. The sieve comparison
+uses the fastest measured setting among 64, 512, and 4,096 odd candidate slots
+in this repository's bytearray implementation. Every output was compared with
+an independent sieve outside the timers.
+
+Longer runs still pay for rebuilding the analytic state. Starting at 10,007
+and producing 2,000 successors took a median 1.100 seconds, against 0.001739
+seconds for the fastest compared sieve. See [the performance report](research/performance.md)
+for phase timings, numerical-state sizes, and reproduction commands.
+
 ## Reproduce the work
 
 ```sh
 python3 -m unittest discover -s tests -v
+python3 -m experiments.benchmark_successors --repeats 5
 python3 -m experiments.benchmark --repeats 3
 python3 -m experiments.benchmark_optimized --repeats 3
 ```
@@ -94,8 +130,15 @@ term. The smallest remaining integer beyond that unit is the immediate next
 prime. A finite root extraction recovers it with a certified rounding interval.
 One additional Euler factor then incorporates that prime into the state.
 
-Within an exponent epoch, the zeta value is reused. At an epoch boundary, the
-exponent and state are rebuilt. That rebuild is charged to advancing time.
+The residual engine stores this small remainder directly. If `R` is the
+remainder, `q` the newly extracted prime, and `s` the exponent, its update is
+`R - q**(-s) - R*q**(-s)`. This avoids carrying the unit term through every
+transition at the high precision required to distinguish the remainder from it.
+
+Within an exponent epoch, the zeta value is reused. The residual engine checks
+a bound on the remaining tail to determine whether the exponent still suffices.
+When the check no longer certifies a successor, the state is rebuilt with a
+larger exponent or more precision. That rebuild is charged to advancing time.
 
 The wrapper performs no primality tests on future candidates in an analytic
 transition. The numerical library still performs substantial arithmetic to
@@ -108,11 +151,11 @@ at an arbitrary large prime therefore has a large hidden history requirement
 unless that history is explicitly supplied or a new initialization method is
 found. This version charges for generating it and documents the requirement.
 
-The remainder carrying the successor is extremely small. The arithmetic
-precision grows roughly with the numerical location times its logarithm for
-this conservative construction. A single numerical variable can therefore
-contain a huge number of bits. This is the main obstacle to the desired compact,
-efficient recurrence.
+The remainder carrying the successor is extremely small. Full initialization
+still needs precision roughly proportional to the numerical location times
+its logarithm. The residual engine reduces the precision used for subsequent
+updates, but retains the complete prime prefix and pays for rebuilding the
+Euler product. These costs remain obstacles to an efficient recurrence.
 
 The default analytic seed and precision limits are research resource limits.
 The exact sieve and Miller-Rabin baselines have explicit unsigned-64-bit or

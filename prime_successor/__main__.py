@@ -16,8 +16,8 @@ from .engine import (
 def main() -> None:
     parser = argparse.ArgumentParser(description="Prime successor research lab")
     parser.add_argument(
-        "--method", choices=["analytic", "optimized", "bitset", "bytearray", "miller-rabin", "trial"],
-        default="analytic",
+        "--method", choices=["analytic", "optimized", "residual", "bitset", "bytearray", "miller-rabin", "trial"],
+        default="residual",
     )
     parser.add_argument("--start", type=int, default=1)
     parser.add_argument("--count", type=int, default=10)
@@ -25,13 +25,17 @@ def main() -> None:
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--verify", action="store_true", help="Independently scan after computing; verification work is separate")
     args = parser.parse_args()
-    if args.method in ("analytic", "optimized"):
+    analytic_method = args.method in ("analytic", "optimized", "residual")
+    if analytic_method:
         if args.method == "analytic":
             from .analytic import AnalyticSuccessor
             engine = AnalyticSuccessor(args.start)
-        else:
+        elif args.method == "optimized":
             from .optimized import PrecisionAwareSuccessor
             engine = PrecisionAwareSuccessor(args.start)
+        else:
+            from .fast_analytic import FastAnalyticSuccessor
+            engine = FastAnalyticSuccessor(args.start)
     else:
         kinds = {
             "bitset": ResidueBitsetSuccessor,
@@ -47,7 +51,7 @@ def main() -> None:
         verified = outputs == TrialDivisionSuccessor(args.start).take(args.count)
         if not verified:
             raise AssertionError("Independent verification failed")
-    status = engine.status() if args.method in ("analytic", "optimized") else {
+    status = engine.status() if analytic_method else {
         "current": engine.current, "stats": engine.stats.to_dict()
     }
     result = {
