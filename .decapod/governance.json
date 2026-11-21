@@ -103,7 +103,7 @@
         "Preserve accepted repo.pr-readiness.v1; no policy.control approval is asserted.",
         "The record experiment runs on GitHub Actions. The current analytic method and its guard limits are preserved; no unbounded search or record discovery claim without certified output."
       ],
-      "artifact_hash": "sha256:d69ffe152b3b03907a9bc040b175c8135f7f257fe6e5a495a0b1fc52f92b5a1d",
+      "artifact_hash": "sha256:e649e6231dccac2ace60fb1993e32a2d7987fc6e1a078751204bdfc922644c33",
       "checks": [
         {
           "name": "hosted_calibration",
@@ -263,6 +263,27 @@
           "binding_digest": "sha256:abb97acb9929e1198c14f4cc7dbc41139dd1e88aeb5c3d2bd681e40e8ceed218",
           "checkpoint_id": "record-results-accepted-contract",
           "sequence": 1
+        },
+        {
+          "binding": {
+            "governance_digest": "sha256:9ce08b7a9e3c4606e229cb69ac1276543f6d8cf9e12aa02e8504492ac6d40603",
+            "head_revision": "4e4346cd772628d29a0d4f2e857e781db4a43ec1",
+            "intent_id": "intent:change_01M7Y8JF8ADDTSWJ0GV5ZDHKC6",
+            "material_digest": "sha256:52a975b6c9376517673ecfe85df49e482460c34ad2f8a7cb1ca5ca7674f87102",
+            "plan_digest": "sha256:a7f0a39d2b945aa844b7b8a881856e39dee4c0b20422fc63e24697c46b3af341",
+            "policy_digest": "sha256:17fc3acbadb8ad904b98da53f58b93ba1c52e124b47377bdd04f029d9b4e066f",
+            "required_approvals": [],
+            "run_id": "branch_01M7Y8JF8VVW8709SYXXV4GAK7",
+            "schema_version": "1.0.0",
+            "task_custody_digest": "sha256:6a5e49afa5ad74ff697de3311d0d09cf44429fdec2831f1e1d203c91f3eee7e6",
+            "task_id": "cicd_01m7y8j6dvkfxc9w",
+            "trajectory_digest": "sha256:686cc37bc929ec74c1f726cdcb450adc8855d0dc0065509a771cc6ff5d832212",
+            "validation_epoch_digest": "sha256:d8317e5fd2b79c55182baf34856c7bc14089cd5c92c78218fbe50bc5a5429a40",
+            "work_branch": "agent/primeward-record/cicd_01m7y8j6dvkfxc9w-record"
+          },
+          "binding_digest": "sha256:b7be8b9c29004a8e24c2d9bd595a75a3a0d1db6b458d5dbed6234ee7872d7c90",
+          "checkpoint_id": "record-exact-4e4346cd",
+          "sequence": 2
         }
       ],
       "inspected_files": [
