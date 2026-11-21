@@ -23,13 +23,29 @@ jobs:
           path: |
             ~/.cargo/bin/cargo-binstall
             ~/.cargo/bin/decapod
-          key: ${{ runner.os }}-decapod-tools-v1-${{ hashFiles('AGENTS.md') }}
+          key: ${{ runner.os }}-decapod-0.156.1-tools-v1-${{ hashFiles('AGENTS.md') }}
       - name: Install cargo-binstall
         if: steps.cache_decapod_tools.outputs.cache-hit != 'true'
         uses: cargo-bins/cargo-binstall@main
       - name: Install Decapod
         if: steps.cache_decapod_tools.outputs.cache-hit != 'true'
-        run: cargo binstall --no-confirm decapod
+        run: cargo binstall --no-confirm --version 0.156.1 decapod
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: Install scientific dependencies
+        run: python -m pip install -r requirements-applications.txt
+      - name: Unit tests
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+          MPLBACKEND: Agg
+        run: python -B -m unittest discover -s tests -v
+      - name: Application examples
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: python -B -m applications verify
       - name: Decapod Validate
         env:
           # Bind validation to the immutable provider range. Never substitute

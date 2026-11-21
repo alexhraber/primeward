@@ -1,17 +1,216 @@
 {
   "package": "primeward",
   "version": "0.2.0",
-  "created_utc": "2026-11-20T23:31:23.727148+00:00",
+  "created_utc": "2026-11-21T03:09:59.575182+00:00",
+  "exclusions": [
+    "MANIFEST.json",
+    ".decapod/** (Decapod-owned attestations and runtime state)"
+  ],
   "files": [
     {
+      "path": ".github/workflows/decapod-validate.yml",
+      "bytes": 3501,
+      "sha256": "e3600bc8dcc7a420d7097ffb0daa9fc61f1e073edea5a94fe807c465ca4a4fc8"
+    },
+    {
       "path": ".gitignore",
-      "bytes": 131,
-      "sha256": "1d1064ee5bad300fcc395d15a4475785d4380dc6df12df0665b60e7a9b2f36b1"
+      "bytes": 384,
+      "sha256": "1a87191cf5c821a8d5bf48c824db410f85aeae72cee9936ed8e20644f3017524"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 15071,
+      "sha256": "4579f18cb78a6ef8dc9c73fa886cdc1977d69d0dcf13935318890e1445431135"
+    },
+    {
+      "path": "CLAUDE.md",
+      "bytes": 7697,
+      "sha256": "5120421a56e24cb9669270f404b30cd50480151d5440224f71a86214a20a8b0a"
+    },
+    {
+      "path": "CODEX.md",
+      "bytes": 7696,
+      "sha256": "e5d5cdc5d3b8f5e1496eccdb00ba2f7ce5610dbfeaffe9fbd95045b7d07802b0"
+    },
+    {
+      "path": "GEMINI.md",
+      "bytes": 7697,
+      "sha256": "caf0b9c332cd08183d5e78db69cd7a8976275645e674c86361fc55da00bbd7ec"
     },
     {
       "path": "README.md",
-      "bytes": 9562,
-      "sha256": "680c58a2d7acdc9270fe9f9fd54d947006dfcc851c2b863af30c2344370e68fd"
+      "bytes": 10717,
+      "sha256": "bc362894815ada5da997fabec4d3d91aedcf587f10789ae8b0bc369b08675a6f"
+    },
+    {
+      "path": "applications/README.md",
+      "bytes": 12470,
+      "sha256": "07a8c7b713a0f14143fc62cddcf300a1655d7e1156af239920f5a27c03d165f4"
+    },
+    {
+      "path": "applications/__init__.py",
+      "bytes": 228,
+      "sha256": "cfbd2d3189310224c5842544b4460afcf53a58ed8ca38ff7086f246677223132"
+    },
+    {
+      "path": "applications/__main__.py",
+      "bytes": 4736,
+      "sha256": "4263b45b2874397a3f863bc9d13f4b358431e574e62286cdc3c13cbf74c555d7"
+    },
+    {
+      "path": "applications/common.py",
+      "bytes": 3652,
+      "sha256": "2d7d34bffc75c2843bc56fad485149c4abf6484ad3881888c37266defe1232dd"
+    },
+    {
+      "path": "applications/examples/README.md",
+      "bytes": 1718,
+      "sha256": "6eb400018406fef647e78791fe144bb56fe9051cadc39acf8e2a5668d45281ed"
+    },
+    {
+      "path": "applications/examples/form-factor.json",
+      "bytes": 35035,
+      "sha256": "6bc83486eb00c407151f73173008d271902789be9bf1d53f1cb0e28d00699386"
+    },
+    {
+      "path": "applications/examples/form-factor.svg",
+      "bytes": 32070,
+      "sha256": "0ecef5ba85c88c2ae3e3f530538309419fc1f7da708e373df13c8e74d5764bfb"
+    },
+    {
+      "path": "applications/examples/inverse-spectrum.json",
+      "bytes": 48052,
+      "sha256": "8ec237f4512b5d177254379eecc335c5f6c27bdb55f1fc2ea9cdeac7d965e951"
+    },
+    {
+      "path": "applications/examples/inverse-spectrum.svg",
+      "bytes": 39945,
+      "sha256": "92b71222931e2cf2b6a1ee2c2652d95694be569b07c2b267ed8b32a4adcd4ee3"
+    },
+    {
+      "path": "applications/examples/prime-orbits.json",
+      "bytes": 10988,
+      "sha256": "53751a47a3480616c86c0dcaeaacd2edcb027839d9aca136dc7dbda47dd761a2"
+    },
+    {
+      "path": "applications/examples/prime-orbits.svg",
+      "bytes": 33783,
+      "sha256": "5bbbc101ce5ecaf4178301f8f3d3c64afc515a9ceb79e0b31f23c91564797607"
+    },
+    {
+      "path": "applications/examples/primon-gas.json",
+      "bytes": 9314,
+      "sha256": "9b69beb3882eb680118678cf55838ca499ada2728217f6f54c4392fb846d9834"
+    },
+    {
+      "path": "applications/examples/primon-gas.svg",
+      "bytes": 33983,
+      "sha256": "e975992424639125b2e73110abf665b3b18e6887ad0fa576f38b44e39f895d13"
+    },
+    {
+      "path": "applications/examples/provenance.json",
+      "bytes": 2203,
+      "sha256": "95390965106c5db7e50301181e909008d063592101d6c95adfe10fa7abd8f668"
+    },
+    {
+      "path": "applications/examples/scattering.json",
+      "bytes": 56039,
+      "sha256": "4b484f870bf942cf48cc94e355f0e1bb7d9f4b0ba4e294e43bcac9a65d8c7566"
+    },
+    {
+      "path": "applications/examples/scattering.svg",
+      "bytes": 76366,
+      "sha256": "f630b75faff84c92730e5e7de05bd3ec4c2fce8e14b68e702f0bf0811e3c72b7"
+    },
+    {
+      "path": "applications/examples/spectral-recovery.json",
+      "bytes": 6726,
+      "sha256": "b709bf133981f7b0984bd6d8ad0de948603e3daee9eef0d1b61f82377ddc77f2"
+    },
+    {
+      "path": "applications/examples/spectral-recovery.svg",
+      "bytes": 39435,
+      "sha256": "9f3615d839f38a36fcd8fd7fd789eca52c2914e0d8fd213aa4f8561495661959"
+    },
+    {
+      "path": "applications/examples/transport.json",
+      "bytes": 125366,
+      "sha256": "31eceeb9fa5597285a15cac05b35e641136e68f7e29f36ab946df830845245ae"
+    },
+    {
+      "path": "applications/examples/transport.svg",
+      "bytes": 45445,
+      "sha256": "1924c1a00cb6020c8b06b3c5ef7471cf36eb89580dde119486cf31ad09f66e0a"
+    },
+    {
+      "path": "applications/examples/twisted-gas.json",
+      "bytes": 2604,
+      "sha256": "5f0a4dac4d10a936cddac9ec28c9e11b25965cd47415faca95e8cd875d5c3585"
+    },
+    {
+      "path": "applications/examples/twisted-gas.svg",
+      "bytes": 35068,
+      "sha256": "bbb89e303dc04c2d12bf49b4851a9ade28079032407bf7124772c85294d13f41"
+    },
+    {
+      "path": "applications/form_factor.py",
+      "bytes": 1744,
+      "sha256": "39b40453072c43f8e4cd6286baa5e31183a2be40443da87347484ac1530c36e5"
+    },
+    {
+      "path": "applications/inverse_spectrum.py",
+      "bytes": 5739,
+      "sha256": "358ef02859f136a6357f022e5267559bfae7f93e459f81006a91519d45d491fb"
+    },
+    {
+      "path": "applications/plotting.py",
+      "bytes": 4717,
+      "sha256": "c565d5020bd1fc721c3e9f3c1c512344956e8c76bfd95a8728e53c653b8b6531"
+    },
+    {
+      "path": "applications/prime_orbits.py",
+      "bytes": 2327,
+      "sha256": "22f84a8f98945815e08f0ed4d32bbdb74999eccab256620e47c260848fc85970"
+    },
+    {
+      "path": "applications/primon_gas.py",
+      "bytes": 4592,
+      "sha256": "e427acfe5b84455db113f92320d1f95dad317b1c72fb06abf1d7b6ae67fa3c4d"
+    },
+    {
+      "path": "applications/proof.py",
+      "bytes": 2825,
+      "sha256": "d4d42ce3e77fedd66a29375aead1aa8a824ae360202c06704ac4629b82d6031d"
+    },
+    {
+      "path": "applications/scattering.py",
+      "bytes": 3194,
+      "sha256": "696526d1c413969676eb47f1773cb20faa303e9822c2acaa6c2c40d67544a4ee"
+    },
+    {
+      "path": "applications/spectral_recovery.py",
+      "bytes": 10281,
+      "sha256": "9d170305745bb0281440f8a9af2da10c3156eae0e600c817e95a137d0c112293"
+    },
+    {
+      "path": "applications/tools/README.md",
+      "bytes": 3198,
+      "sha256": "c01f476521ec20aad44a685062097fd84e898dcf40ae862ead1d1e2fa386b6e7"
+    },
+    {
+      "path": "applications/tools/prepare_runtime.py",
+      "bytes": 13968,
+      "sha256": "b1d6685634219b3b646d741cccd4fb70f9b0bf41a11ab7b856d0dd2dcdd94de7"
+    },
+    {
+      "path": "applications/transport.py",
+      "bytes": 3990,
+      "sha256": "ccc456675d58d782fa80efd63e8a335d9e6466a53e30f601f9a680d39cb38ac1"
+    },
+    {
+      "path": "applications/twisted_gas.py",
+      "bytes": 2839,
+      "sha256": "205dbffd0f46b52af72303bd3e36ba9ec3fac4d6f9cfc60749e7e54ba0054ea2"
     },
     {
       "path": "experiments/benchmark.py",
@@ -65,8 +264,13 @@
     },
     {
       "path": "pyproject.toml",
-      "bytes": 537,
-      "sha256": "e258d110681a027b7923fc996ad4c7542e3e163ce23fbf4a467e49bf3665c6bb"
+      "bytes": 679,
+      "sha256": "c687835127a8b81910c50405c695475665b4af76e798aeedc370695a558c88f1"
+    },
+    {
+      "path": "requirements-applications.txt",
+      "bytes": 66,
+      "sha256": "a992fe635f5d763cd9e10cf319810a8087882e4c74d8157d25d307d3a456bb7d"
     },
     {
       "path": "requirements-experiments.txt",
@@ -194,6 +398,26 @@
       "sha256": "c1cf987cdada4123a1990734c022c2f5403a62684807042e17005f8c99f42009"
     },
     {
+      "path": "tests/test_app_cli.py",
+      "bytes": 1343,
+      "sha256": "95644aab6d69d087fa6be2570dfd97c2b6afc7ebb5cd0068a212e8751ee41b1b"
+    },
+    {
+      "path": "tests/test_app_recovery.py",
+      "bytes": 3270,
+      "sha256": "1177c8b57da2d9b406a8997b562fac645fb2a60b0e982a88e265ccb4d0bce53a"
+    },
+    {
+      "path": "tests/test_app_thermal.py",
+      "bytes": 6674,
+      "sha256": "ccf290b4b18c0d65cd76a724251cb672edc6b29985279b42f4b7486b396476ea"
+    },
+    {
+      "path": "tests/test_app_waves.py",
+      "bytes": 5248,
+      "sha256": "55be04b1e1b1144f0a446637114846202d5bd56dce07a158cfe549a97d725eaf"
+    },
+    {
       "path": "tests/test_engine.py",
       "bytes": 7479,
       "sha256": "71c660ea317b9fcd0cc1b637656ea2eca9c777908ca430794e5f6b6f98dd372a"
@@ -208,7 +432,5 @@
       "bytes": 3597,
       "sha256": "a4258cca1c2bf276762790588e445905d6d3d6fff24bec27cb74ca0f59709c29"
     }
-  ],
-  "repository": "https://github.com/alexhraber/primeward",
-  "updated_utc": "2026-11-21T00:29:01.270919+00:00"
+  ]
 }

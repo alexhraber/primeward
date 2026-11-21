@@ -1,107 +1,31 @@
 # Interfaces
 
-## Project Purpose
-Exact prime succession through reusable arithmetic state, with reproducible numerical physics applications.
-
-## Authoring Scope and Evidence
-Project: Primeward. This is an initial authoring scaffold, not an implementation attestation.
-
-Describe the configured project from purpose to architecture to implementation depth. Start with the whole product: its users, problem, outcomes, and boundaries; then explain the system and its components, interfaces, state, operations, security, and proof. Ground factual prose in the repository's config, README/product documentation, source paths and symbols, contracts, and tests. Distinguish implemented behavior, intended behavior, assumptions, and unresolved gaps. A narrow task changes the relevant part of this whole-project account; it must not replace project-wide identity with the latest task, release workflow, or tooling. Record task-specific scope and evidence in the current change's governance record. Templates and declared capabilities are authoring/proof obligations, not evidence that a runtime guarantee exists. Preserve authored prose during generated refreshes. If configured metadata and explicit project-level sections are absent, leave project identity unknown and ask for or author grounded context rather than promoting an arbitrary legacy/task line.
-
-Use the seeded context below as a starting point to verify against repository sources. Replace example diagrams, suggested controls, targets, tables, and blank fields with source-grounded prose; mark non-applicable topics with a reason. Do not adopt a store, queue, server, CI provider, replay guarantee, or service level merely because it appears in a template.
-
-## Contract Principles
-- Prefer explicit schemas over implicit behavior.
-- Every mutating interface defines idempotency semantics.
-- Every failure path maps to a typed, documented error code.
-
-## Generated Contract Depth
-Generated interface specs should include:
-- API/CLI contracts with request/response schemas.
-- Read/write ownership for each storage path.
-- Idempotency and retry behavior for mutations.
-- Typed failure classes and recovery instructions.
-
-## API / RPC Contracts
-| Interface | Method | Request Schema | Response Schema | Errors | Idempotency |
-|---|---|---|---|---|---|
-| `TODO` | `TODO` | `TODO` | `TODO` | `TODO` | `TODO` |
-
-## Event Consumers
-| Consumer | Event | Ordering Requirement | Retry Policy | DLQ Policy |
-|---|---|---|---|---|
-| `TODO` | `TODO` | `TODO` | `TODO` | `TODO` |
-
-## Outbound Dependencies
-| Dependency | Purpose | SLA | Timeout | Circuit-Breaker |
-|---|---|---|---|---|
-| `TODO` | `TODO` | `TODO` | `TODO` | `TODO` |
+## Core
+`prime_successor.fast_analytic.FastAnalyticSuccessor` and the existing engine APIs retain their previous contracts. Prime-successor input/output limits and certificates are documented in the root README and core tests. This change adds consumers rather than replacing core algorithms.
 
 ## Inbound Contracts
-- API / RPC entrypoints:
-- CLI surfaces:
-- Event/webhook consumers:
-- Repository-detected surfaces: cli, library
+`python -m applications` and `primeward-applications` accept `list`, `verify`, `run-all` or one of eight application slugs. Shared options are `--count`, `--start`, `--prime-method`, `--beta`, `--seed`, `--output`, `--output-dir`, `--plot` and `--summary`. Count is bounded to 1..4096; the default inverse example requires at least five inputs. Detailed applicability is enforced by the parser and documented in `applications/README.md`.
+
+Exit status 0 means the invoked checks passed, 1 means a scientific check failed, and 2 means invalid input or a required dependency/error prevented the calculation. `verify` writes no product artifacts. `run-all` writes only when an output directory or plotting option requests it.
 
 ## Data Ownership
-- Source-of-truth tables/collections:
-- Cross-boundary read models:
-- Consistency expectations:
+Schema 1.0 includes application, model, parameters, data, checks, passed, schema_version and prime_source. Prime-source metadata contains method, start, count and actual prime labels. Strict JSON excludes non-finite numbers. Log quantities preserve scale when direct exponentiation is unavailable.
 
-## Error Taxonomy Example (service_or_library)
-```python
-class ApiError(Exception):
-    def __init__(self, code: str, message: str) -> None:
-        self.code = code
-        self.message = message
-        super().__init__(f"{code}: {message}")
-```
+Spectral Observation values are Arb intervals tagged with either finite_levels or boson_residual. Recovery results distinguish complete, unresolved and inconsistent. Bounds are conditional on the supplied level count, positive-weight model and any gap bound. Precision/noise semantics are documented beside the implementation.
+
+## Outbound Dependencies
+
+The core calls python-flint. The inverse solver calls NumPy and SciPy; plots call Matplotlib and its installed dependencies. These are local library calls, with no remote service contract. The governed proof entry point can read an explicitly declared dependency archive and derive its runtime files in owned scratch; normal installations use installed packages.
 
 ## Failure Semantics
-| Failure Class | Retry/Backoff | Client Contract | Observability |
-|---|---|---|---|
-| Validation | No retry | 4xx typed error | warn log + metric |
-| Dependency timeout | Exponential backoff | 503 with retryable code | error log + alert |
-| Conflict | Conditional retry | 409 with conflict detail | info log + metric |
 
-## Timeout Budget
-| Hop | Budget (ms) | Notes |
-|---|---|---|
-| Client -> Edge/API | 500 | Includes auth + routing |
-| API -> Domain | 300 | Includes validation |
-| Domain -> Store/Dependency | 200 | Includes retry overhead |
+Failed scientific checks return status 1 with their diagnostics preserved. Argument/dependency/model errors return status 2. Spectral recovery reports unresolved input uncertainty separately from inconsistent observations. JSON never substitutes a finite-looking value for overflow; logs and explicit flags carry that condition.
 
-## Interface Versioning
-- Version strategy (`v1`, date-based, semver):
-- Backward-compatibility guarantees:
-- Deprecation window and removal policy:
+<!-- decapod:codebase-attestation:start -->
 
-## CLI and Machine-Readable Contract
-| Surface | Invocation/Shape | Reads | Writes | Output Stability | Proof |
-|---|---|---|---|---|---|
-| Human CLI | | | | | |
-| JSON/automation | | | | | |
-| RPC/plugin | | | | | |
-| Event/file boundary | | | | | |
+## Codebase Attestation
 
-## Compatibility Matrix
-| Contract | Current Version | Consumers | Additive Changes | Breaking Changes | Migration Trigger |
-|---|---|---|---|---|---|
-| Request/input | | | | | |
-| Response/output | | | | | |
-| Persisted data | | | | | |
-| Events/artifacts | | | | | |
-
-## Observability Contract
-- Correlation/request identity:
-- Structured fields required on success:
-- Structured fields required on failure:
-- Audit events for sensitive mutations:
-- Metrics and traces that prove latency, retries, and outcomes:
-
-## Interface Change Review
-- [ ] The owner and source of truth are named for every changed field.
-- [ ] Retry, idempotency, timeout, and conflict behavior are explicit.
-- [ ] Consumers can distinguish validation, authorization, conflict,
-  dependency, and internal failures.
-- [ ] Backward compatibility or migration instructions are published.
+- Repository signal fingerprint: `77ec1794e03e485a3d8d927049e0a3da108dc579c40541a59790529007b51fab`
+- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (4 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (8 files)
+- Refreshed from the current codebase by `decapod rpc --op specs.refresh`
+<!-- decapod:codebase-attestation:end -->

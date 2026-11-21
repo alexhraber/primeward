@@ -1,0 +1,322 @@
+{
+  "application": "primon-gas",
+  "model": "finite independent prime oscillators",
+  "parameters": {
+    "beta": 1.5,
+    "energy_scale": 1.0,
+    "units": "kB=1"
+  },
+  "data": {
+    "boson": {
+      "primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        89,
+        97,
+        101,
+        103,
+        107,
+        109,
+        113,
+        127,
+        131
+      ],
+      "beta": 1.5,
+      "energy_scale": 1.0,
+      "statistics": "boson",
+      "mode_count": 32,
+      "log_partition": 0.9342891494459549,
+      "mean_energy": 1.3364795834079424,
+      "energy_variance": 2.6872863608043964,
+      "heat_capacity_over_kB": 6.046394311809892,
+      "entropy_over_kB": 2.9390085245578685,
+      "occupations": "unbounded",
+      "precision": "binary64",
+      "prime_cutoff": 131
+    },
+    "fermion": {
+      "primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        89,
+        97,
+        101,
+        103,
+        107,
+        109,
+        113,
+        127,
+        131
+      ],
+      "beta": 1.5,
+      "energy_scale": 1.0,
+      "statistics": "fermion",
+      "mode_count": 32,
+      "log_partition": 0.7502600156840777,
+      "mean_energy": 1.0068882269076842,
+      "energy_variance": 1.998746419614986,
+      "heat_capacity_over_kB": 4.497179444133719,
+      "entropy_over_kB": 2.260592356045604,
+      "occupations": "0 or 1",
+      "precision": "binary64",
+      "prime_cutoff": 131
+    },
+    "infinite_boson_reference": {
+      "enclosure": "[2.6123753486854883433485675679240716306 +/- 2.93e-38]",
+      "approximation": 2.612375348685488,
+      "precision_bits": 128,
+      "s": 1.5
+    },
+    "exact_mode_recovery": {
+      "start": 1,
+      "modes": [
+        {
+          "prime": 2,
+          "energy": 0.6931471805599453,
+          "prime_certificate": {
+            "previous": 1,
+            "next": 2,
+            "exponent": 4,
+            "precision_bits": 266,
+            "residual_precision_bits": 266,
+            "transition_precision_bits": 266,
+            "strict_lower_integer": 1,
+            "strict_upper_integer": 2,
+            "rounding": "ceiling (identity start)",
+            "epoch_successor_limit": 5,
+            "past_euler_factors_before_step": 0,
+            "root_enclosure": "[1.866892859577619112 +/- 2.26e-19]",
+            "residual_enclosure": "[0.0823232337111 +/- 3.83e-14]",
+            "epoch_tail_bound_enclosure": "[0.000742013961197 +/- 2.77e-16]",
+            "interval_containment_checked": true,
+            "epoch_bound_checked": false,
+            "future_candidate_primality_tests": 0,
+            "assumptions": [
+              "complete prime prefix in state",
+              "odd-lattice finite-exponent extraction lemma (identity handled separately)",
+              "certified residual tail bound for unknown successor",
+              "correct FLINT/Arb enclosure implementation"
+            ],
+            "standalone_formal_certificate": false
+          }
+        },
+        {
+          "prime": 3,
+          "energy": 1.0986122886681098,
+          "prime_certificate": {
+            "previous": 2,
+            "next": 3,
+            "exponent": 4,
+            "precision_bits": 266,
+            "residual_precision_bits": 266,
+            "transition_precision_bits": 266,
+            "strict_lower_integer": 2,
+            "strict_upper_integer": 4,
+            "rounding": "nearest odd integer",
+            "epoch_successor_limit": 5,
+            "past_euler_factors_before_step": 1,
+            "root_enclosure": "[2.872982928473201903 +/- 4.44e-19]",
+            "residual_enclosure": "[0.0146780316042 +/- 7.95e-15]",
+            "epoch_tail_bound_enclosure": "[0.000742013961197 +/- 2.77e-16]",
+            "interval_containment_checked": true,
+            "epoch_bound_checked": true,
+            "future_candidate_primality_tests": 0,
+            "assumptions": [
+              "complete prime prefix in state",
+              "odd-lattice finite-exponent extraction lemma (identity handled separately)",
+              "certified residual tail bound for unknown successor",
+              "correct FLINT/Arb enclosure implementation"
+            ],
+            "standalone_formal_certificate": false
+          }
+        },
+        {
+          "prime": 5,
+          "energy": 1.6094379124341003,
+          "prime_certificate": {
+            "previous": 3,
+            "next": 5,
+            "exponent": 4,
+            "precision_bits": 266,
+            "residual_precision_bits": 266,
+            "transition_precision_bits": 266,
+            "strict_lower_integer": 4,
+            "strict_upper_integer": 6,
+            "rounding": "nearest odd integer",
+            "epoch_successor_limit": 5,
+            "past_euler_factors_before_step": 2,
+            "root_enclosure": "[4.643363825544631858 +/- 5.26e-19]",
+            "residual_enclosure": "[0.00215114232513 +/- 2.05e-15]",
+            "epoch_tail_bound_enclosure": "[0.000742013961197 +/- 2.77e-16]",
+            "interval_containment_checked": true,
+            "epoch_bound_checked": true,
+            "future_candidate_primality_tests": 0,
+            "assumptions": [
+              "complete prime prefix in state",
+              "odd-lattice finite-exponent extraction lemma (identity handled separately)",
+              "certified residual tail bound for unknown successor",
+              "correct FLINT/Arb enclosure implementation"
+            ],
+            "standalone_formal_certificate": false
+          }
+        },
+        {
+          "prime": 7,
+          "energy": 1.9459101490553132,
+          "prime_certificate": {
+            "previous": 5,
+            "next": 7,
+            "exponent": 8,
+            "precision_bits": 286,
+            "residual_precision_bits": 286,
+            "transition_precision_bits": 286,
+            "strict_lower_integer": 6,
+            "strict_upper_integer": 8,
+            "rounding": "nearest odd integer",
+            "epoch_successor_limit": 13,
+            "past_euler_factors_before_step": 3,
+            "root_enclosure": "[6.969776964525596828 +/- 5.87e-19]",
+            "residual_enclosure": "[1.79576273139e-7 +/- 2.39e-19]",
+            "epoch_tail_bound_enclosure": "[6.56276587282e-10 +/- 8.49e-23]",
+            "interval_containment_checked": true,
+            "epoch_bound_checked": true,
+            "future_candidate_primality_tests": 0,
+            "assumptions": [
+              "complete prime prefix in state",
+              "odd-lattice finite-exponent extraction lemma (identity handled separately)",
+              "certified residual tail bound for unknown successor",
+              "correct FLINT/Arb enclosure implementation"
+            ],
+            "standalone_formal_certificate": false
+          }
+        },
+        {
+          "prime": 11,
+          "energy": 2.3978952727983707,
+          "prime_certificate": {
+            "previous": 7,
+            "next": 11,
+            "exponent": 8,
+            "precision_bits": 286,
+            "residual_precision_bits": 286,
+            "transition_precision_bits": 286,
+            "strict_lower_integer": 10,
+            "strict_upper_integer": 12,
+            "rounding": "nearest odd integer",
+            "epoch_successor_limit": 13,
+            "past_euler_factors_before_step": 4,
+            "root_enclosure": "[10.635241797827083990 +/- 6.89e-19]",
+            "residual_enclosure": "[6.10971643086e-9 +/- 9.44e-22]",
+            "epoch_tail_bound_enclosure": "[6.56276587282e-10 +/- 8.49e-23]",
+            "interval_containment_checked": true,
+            "epoch_bound_checked": true,
+            "future_candidate_primality_tests": 0,
+            "assumptions": [
+              "complete prime prefix in state",
+              "odd-lattice finite-exponent extraction lemma (identity handled separately)",
+              "certified residual tail bound for unknown successor",
+              "correct FLINT/Arb enclosure implementation"
+            ],
+            "standalone_formal_certificate": false
+          }
+        }
+      ],
+      "energy_precision": "binary64 logarithm; the integer prime has the Arb certificate",
+      "identity": "1 is the vacuum contribution, not a prime"
+    }
+  },
+  "checks": {
+    "positive_moments": {
+      "passed": true
+    },
+    "exact_first_modes": {
+      "passed": true
+    },
+    "finite_below_infinite": {
+      "passed": true
+    }
+  },
+  "passed": true,
+  "prime_source": {
+    "method": "residual",
+    "start": 1,
+    "count": 32,
+    "primes": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19,
+      23,
+      29,
+      31,
+      37,
+      41,
+      43,
+      47,
+      53,
+      59,
+      61,
+      67,
+      71,
+      73,
+      79,
+      83,
+      89,
+      97,
+      101,
+      103,
+      107,
+      109,
+      113,
+      127,
+      131
+    ]
+  },
+  "schema_version": "1.0"
+}

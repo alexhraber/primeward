@@ -1,0 +1,295 @@
+{
+  "application": "spectral-recovery",
+  "model": "finite positive thermal traces with bounded errors",
+  "parameters": {
+    "tolerance": 0.003,
+    "gap_lower_bound": 0.5,
+    "precision_bits": 192
+  },
+  "data": {
+    "truth_for_evaluation_only": [
+      1.0,
+      1.6,
+      2.7
+    ],
+    "betas": [
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      32,
+      40,
+      48,
+      64
+    ],
+    "cases": {
+      "clean": {
+        "status": "complete",
+        "reason": "all levels enclosed",
+        "precision_bits": 192,
+        "levels": [
+          {
+            "arb_enclosure": "[1.000000000000000 +/- 3.96e-16]",
+            "midpoint": 1.0000000000000002,
+            "lower": 0.9999999999999998,
+            "upper": 1.0000000000000007
+          },
+          {
+            "arb_enclosure": "[1.60000000 +/- 3.59e-9]",
+            "midpoint": 1.6000000017550435,
+            "lower": 1.5999999999216874,
+            "upper": 1.6000000035883999
+          },
+          {
+            "arb_enclosure": "[2.700000 +/- 2.93e-7]",
+            "midpoint": 2.699999857050093,
+            "lower": 2.699999707719255,
+            "upper": 2.700000006380931
+          }
+        ],
+        "next_interval": null,
+        "residuals": [
+          {
+            "beta": 4.0,
+            "enclosure": "[+/- 2.44e-11]"
+          },
+          {
+            "beta": 8.0,
+            "enclosure": "[+/- 7.93e-14]"
+          },
+          {
+            "beta": 12.0,
+            "enclosure": "[+/- 1.98e-16]"
+          },
+          {
+            "beta": 16.0,
+            "enclosure": "[+/- 4.39e-19]"
+          },
+          {
+            "beta": 20.0,
+            "enclosure": "[+/- 9.26e-22]"
+          },
+          {
+            "beta": 24.0,
+            "enclosure": "[+/- 2.18e-24]"
+          },
+          {
+            "beta": 28.0,
+            "enclosure": "[+/- 1.12e-26]"
+          },
+          {
+            "beta": 32.0,
+            "enclosure": "[+/- 1.67e-28]"
+          },
+          {
+            "beta": 40.0,
+            "enclosure": "[+/- 6.73e-32]"
+          },
+          {
+            "beta": 48.0,
+            "enclosure": "[+/- 2.71e-35]"
+          },
+          {
+            "beta": 64.0,
+            "enclosure": "[+/- 4.06e-42]"
+          }
+        ],
+        "truth_contained": true,
+        "relative_noise_bound": 0,
+        "absolute_noise_bound": 0
+      },
+      "relative_noise": {
+        "status": "partial",
+        "reason": "unresolved: energy interval wider than requested tolerance",
+        "precision_bits": 192,
+        "levels": [
+          {
+            "arb_enclosure": "[1.00000 +/- 1.57e-6]",
+            "midpoint": 1.0000000000781253,
+            "lower": 0.9999984375781077,
+            "upper": 1.0000015625781429
+          }
+        ],
+        "next_interval": {
+          "arb_enclosure": "[1.60 +/- 3.99e-3]",
+          "midpoint": 1.60112725462015,
+          "lower": 1.598271632243194,
+          "upper": 1.6039828769971058
+        },
+        "residuals": [
+          {
+            "beta": 4.0,
+            "enclosure": "[0.00168 +/- 4.08e-6]"
+          },
+          {
+            "beta": 8.0,
+            "enclosure": "[2.8e-6 +/- 7.69e-8]"
+          },
+          {
+            "beta": 12.0,
+            "enclosure": "[+/- 5.32e-9]"
+          },
+          {
+            "beta": 16.0,
+            "enclosure": "[+/- 2.17e-11]"
+          },
+          {
+            "beta": 20.0,
+            "enclosure": "[+/- 2.84e-13]"
+          },
+          {
+            "beta": 24.0,
+            "enclosure": "[+/- 5.22e-15]"
+          },
+          {
+            "beta": 28.0,
+            "enclosure": "[+/- 9.95e-17]"
+          },
+          {
+            "beta": 32.0,
+            "enclosure": "[+/- 1.91e-18]"
+          },
+          {
+            "beta": 40.0,
+            "enclosure": "[+/- 6.91e-22]"
+          },
+          {
+            "beta": 48.0,
+            "enclosure": "[+/- 2.50e-25]"
+          },
+          {
+            "beta": 64.0,
+            "enclosure": "[+/- 3.21e-32]"
+          }
+        ],
+        "truth_contained": true,
+        "relative_noise_bound": 0.0001,
+        "absolute_noise_bound": 0
+      },
+      "absolute_noise": {
+        "status": "unresolved",
+        "reason": "unresolved: energy interval wider than requested tolerance",
+        "precision_bits": 192,
+        "levels": [],
+        "next_interval": {
+          "arb_enclosure": "[1.0 +/- 0.0392]",
+          "midpoint": 1.0079820289155184,
+          "lower": 0.9767887723336176,
+          "upper": 1.0391752854974194
+        },
+        "residuals": [
+          {
+            "beta": 4.0,
+            "enclosure": "[0.020 +/- 1.03e-4]"
+          },
+          {
+            "beta": 8.0,
+            "enclosure": "[+/- 4.39e-4]"
+          },
+          {
+            "beta": 12.0,
+            "enclosure": "[+/- 1.07e-4]"
+          },
+          {
+            "beta": 16.0,
+            "enclosure": "[+/- 1.01e-4]"
+          },
+          {
+            "beta": 20.0,
+            "enclosure": "[+/- 1.01e-4]"
+          },
+          {
+            "beta": 24.0,
+            "enclosure": "[+/- 1.01e-4]"
+          },
+          {
+            "beta": 28.0,
+            "enclosure": "[+/- 1.01e-4]"
+          },
+          {
+            "beta": 32.0,
+            "enclosure": "[+/- 1.01e-4]"
+          },
+          {
+            "beta": 40.0,
+            "enclosure": "[+/- 1.01e-4]"
+          },
+          {
+            "beta": 48.0,
+            "enclosure": "[+/- 1.01e-4]"
+          },
+          {
+            "beta": 64.0,
+            "enclosure": "[+/- 1.01e-4]"
+          }
+        ],
+        "truth_contained": true,
+        "relative_noise_bound": 0,
+        "absolute_noise_bound": 0.0001
+      }
+    },
+    "boson_lowest_mode": {
+      "arb_enclosure": "[1.0 +/- 0.0344]",
+      "midpoint": 1.0171658168670896,
+      "lower": 0.9999999997795733,
+      "upper": 1.0343316339546063
+    },
+    "boson_bound_status": "bounded",
+    "assumptions": "known level count; unit weights; positive energies; adjacent gaps >= 0.5"
+  },
+  "checks": {
+    "clean_recovery": {
+      "passed": true
+    },
+    "interval_coverage": {
+      "passed": true
+    },
+    "noise_refusal": {
+      "passed": true
+    }
+  },
+  "passed": true,
+  "prime_source": {
+    "method": "residual",
+    "start": 1,
+    "count": 32,
+    "primes": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19,
+      23,
+      29,
+      31,
+      37,
+      41,
+      43,
+      47,
+      53,
+      59,
+      61,
+      67,
+      71,
+      73,
+      79,
+      83,
+      89,
+      97,
+      101,
+      103,
+      107,
+      109,
+      113,
+      127,
+      131
+    ]
+  },
+  "schema_version": "1.0"
+}

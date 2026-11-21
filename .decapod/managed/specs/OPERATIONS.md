@@ -1,136 +1,46 @@
 # Operations
 
-## Project Purpose
-Exact prime succession through reusable arithmetic state, with reproducible numerical physics applications.
+## Installation and execution
+Core installation follows the root README. Application users install `.[applications]` or `requirements-applications.txt` with Python 3.11 or newer. Direct application dependencies are pinned for repeatable experiments. No credentials or external services are needed to run the models.
 
-## Authoring Scope and Evidence
-Project: Primeward. This is an initial authoring scaffold, not an implementation attestation.
+Use `python -m applications list` to discover commands and `run-all --output-dir PATH --plot` to produce JSON and figures. The default residual source prioritizes demonstrating certified extraction; explicitly select the bytearray baseline for larger model populations. Input prime generation can dominate runtime and remains part of the work.
 
-Describe the configured project from purpose to architecture to implementation depth. Start with the whole product: its users, problem, outcomes, and boundaries; then explain the system and its components, interfaces, state, operations, security, and proof. Ground factual prose in the repository's config, README/product documentation, source paths and symbols, contracts, and tests. Distinguish implemented behavior, intended behavior, assumptions, and unresolved gaps. A narrow task changes the relevant part of this whole-project account; it must not replace project-wide identity with the latest task, release workflow, or tooling. Record task-specific scope and evidence in the current change's governance record. Templates and declared capabilities are authoring/proof obligations, not evidence that a runtime guarantee exists. Preserve authored prose during generated refreshes. If configured metadata and explicit project-level sections are absent, leave project identity unknown and ask for or author grounded context rather than promoting an arbitrary legacy/task line.
+## Diagnostics
+Inspect the result's checks and aggregate passed field. Preserve log partition functions/log transmission when exponentials underflow. Inspect inverse-fit optimizer termination and grid/box errors. Treat unresolved and inconsistent spectral statuses as meaningful output, rather than increasing precision without examining the observation uncertainty.
 
-Use the seeded context below as a starting point to verify against repository sources. Replace example diagrams, suggested controls, targets, tables, and blank fields with source-grounded prose; mark non-applicable topics with a reason. Do not adopt a store, queue, server, CI provider, replay guarantee, or service level merely because it appears in a template.
+## Development
+Decapod 0.156.1 initializes and governs the repository. The selected backend is local with an isolated worktree and a single writer. Use supported task, plan, workspace, trajectory, specification-refresh, checkpoint and validation commands. Runtime stores and sessions are CLI-owned and never manually edited.
 
-## Operational Readiness Checklist
-- [ ] On-call ownership defined.
-- [ ] SLOs and alert thresholds defined.
-- [ ] Dashboards for latency/errors/throughput are live.
-- [ ] Runbooks linked for all Sev1/Sev2 alerts.
-- [ ] Rollback plan validated.
-- [ ] Capacity guardrails documented.
+The configured required proof commands run the full unit suite and all default application checks. The local measured runtime contract is reviewed separately from hosted CI. GitHub Actions installs dependencies and executes the Python checks explicitly, in addition to Decapod's CI governance validation.
 
-## Deployment Model
-Describe the operational runtime model, scheduling, and system deployment architecture.
-
-## Service Level Objectives
-| SLI | SLO Target | Measurement Window | Owner |
-|---|---|---|---|
-| Availability, if applicable | Select and justify | Select | TBD |
-| P95 latency | TBD | 7d | TBD |
-| Error rate, if applicable | Select and justify | Select | TBD |
+## Artifacts
+`applications/examples/` records finite-model outputs and generation provenance. `MANIFEST.json` covers product files while excluding itself and Decapod-owned governance material to avoid circular attestations. Product runs write only requested outputs; there are no migrations or long-running services.
 
 ## Monitoring
-| Signal | Metric | Threshold | Alert |
-|---|---|---|---|
-| Traffic | requests/sec | baseline drift | warn |
-| Latency | p95/p99 | threshold breach | page |
-| Reliability | error ratio | threshold breach | page |
-| Saturation | cpu/memory/queue depth | sustained high | page |
 
-## Health Checks
-- Liveness:
-- Readiness:
-- Dependency health:
-- Synthetic transaction:
+There is no persistent service to monitor. Inspect command exit status, result checks, spectral status, optimizer termination and flux/refinement errors. Captured Decapod receipts and CI logs record required validation; saved example provenance records the scientific runtime and settings.
+
+## Service Level Objectives
+
+Service availability and latency objectives do not apply to this local research package. Runtime varies with requested primes, precision, matrix sizes and hardware. Benchmarks report measured costs rather than an operational SLA.
 
 ## Incident Response
-- Detection:
-- Triage:
-- Mitigation:
-- Communication:
-- Post-mortem:
 
-## Rollout Strategy
-- Blue/green deployment:
-- Canary release:
-- Rolling update:
-- Feature flags:
+For a failed scientific check, retain the input parameters and JSON/log output, isolate the independent comparison that failed, repair the model or its stated input contract, and rerun the required checks. For governance failure, use the reported supported repair path, preserve evidence and obtain a fresh exact-candidate receipt. Do not edit Decapod runtime stores or suppress required checks.
 
-## Capacity Planning
-- Traffic patterns:
-- Resource utilization:
-- Scaling triggers:
+## Measured Runtime Packaging
 
-## Logging
-Use `structlog` (or stdlib logging JSON formatter) with request_id, task_id, and outcome fields.
+The local readiness contract uses a canonical native Python executable, a standard-library ZIP, native extension modules and system libraries, plus a compressed archive of scientific dependencies and package data. The source-controlled proof entry point extracts the measured archive into owned scratch and passes its package path to child Python commands. Python runs with site processing disabled and bytecode writes disabled. This is repository-authored runtime packaging, not a Decapod built-in capsule. Its absolute paths describe the reviewed validation host; another host must provision and review its own equivalent contract through Decapod. Ordinary package commands and CI do not require these host paths.
 
-## Runbook
-### Detect
-- Signals that indicate the service/workflow is unhealthy:
-- Dashboards, logs, and evidence locations:
+## Reprovisioning on Another Host
 
-### Triage
-- First bounded checks:
-- How to distinguish code, dependency, data, and capacity failures:
-- Who owns the decision to continue, roll back, or stop:
+The trusted Linux CPython 3.14 venv can run `applications/tools/prepare_runtime.py` to create a new runtime directory, closure hashes and a suggested two-command TOML fragment. It refuses nonempty destinations and does not alter governance. Review the generated closure and current imports before reconciling the supported Decapod contract; an accepted policy transition still requires its normal authority. See `applications/tools/README.md`.
 
-### Mitigate and Recover
-- Safe mitigation:
-- Rollback or forward-fix trigger:
-- Data repair/replay procedure:
-- Verification required after recovery:
+<!-- decapod:codebase-attestation:start -->
 
-## Release and Migration Readiness
-- [ ] Release artifact and schema versions are identified.
-- [ ] A breaking change has an explicit migration trigger and agent instruction.
-- [ ] Migration is idempotent and repeat-run behavior is tested.
-- [ ] Backup, restore, rollback, and post-migration verification are documented.
-- [ ] Rollout can be halted before the blast radius expands.
+## Codebase Attestation
 
-## Secrets Management
-| Secret | Source | Rotation | Consumer |
-|---|---|---|---|
-| External service auth material | managed runtime configuration | periodic | runtime services |
-| Artifact signing material | managed signing service/local secure store | periodic | release pipeline |
-
-## Security Testing
-| Test Type | Cadence | Tooling |
-|---|---|---|
-| SAST | each PR | language linters/scanners |
-| Dependency scan | each PR + weekly | supply-chain tools |
-| DAST/pentest | scheduled | external/internal |
-
-## Trust-Boundary Inventory
-| Boundary | Principal/Input | Authority Granted | Validation | Audit Evidence | Failure Default |
-|---|---|---|---|---|---|
-| User/agent -> entrypoint | | | | | deny/reject |
-| Entrypoint -> core | | | | | deny/reject |
-| Core -> persistence | | | | | fail closed/transaction rollback |
-| Runtime -> external dependency | | | | | timeout/degrade |
-
-## Agent and Automation Safety
-- Prompt/configuration text is treated as untrusted input until evaluated by
-  the repository's policy gate.
-- Automation must not infer authorization, ownership, or a migration approval
-  that is not present in the governed context.
-- Sensitive artifacts, credentials, and untrusted attachments are not executed
-  or imported as instructions.
-- Every privileged mutation has an actor, scope, and durable evidence trail.
-
-## Security Change Review
-- [ ] New inputs and outputs are classified.
-- [ ] Trust boundaries and privilege changes are documented.
-- [ ] Abuse cases cover spoofing, tampering, disclosure, denial of service, and
-  privilege escalation as applicable.
-- [ ] Secret handling, redaction, retention, and deletion were re-checked.
-- [ ] Supply-chain and provenance implications are recorded.
-
-## Compliance and Audit
-- Regulatory scope:
-- Audit evidence location:
-- Exception process:
-
-## Pre-Promotion Security Checklist
-- [ ] Threat model updated for changed surfaces.
-- [ ] Auth/authz tests pass.
-- [ ] Dependency vulnerability scan reviewed.
-- [ ] No unresolved critical/high security findings.
+- Repository signal fingerprint: `77ec1794e03e485a3d8d927049e0a3da108dc579c40541a59790529007b51fab`
+- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (4 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (8 files)
+- Refreshed from the current codebase by `decapod rpc --op specs.refresh`
+<!-- decapod:codebase-attestation:end -->

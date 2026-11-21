@@ -10,11 +10,13 @@ requires-python = ">=3.10"
 dependencies = ["python-flint==0.9.0"]
 
 [project.optional-dependencies]
+applications = ["numpy==2.3.5", "scipy==1.17.0", "matplotlib==3.10.8"]
 experiments = ["numpy==2.3.5", "scipy==1.17.0", "scikit-learn==1.8.0"]
 
 [project.scripts]
 prime-successor = "prime_successor.__main__:main"
+primeward-applications = "applications.__main__:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["prime_successor*"]
+include = ["prime_successor*", "applications*"]

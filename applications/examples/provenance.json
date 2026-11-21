@@ -1,0 +1,45 @@
+{
+  "generated_utc": "2026-11-21T02:55:10.275071+00:00",
+  "python": "3.14.4",
+  "platform": "Linux-6.18.56-x86_64-with-glibc2.43",
+  "versions": {
+    "python-flint": "0.9.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "settings": {
+    "count": 32,
+    "start": 1,
+    "prime_method": "residual",
+    "beta": 1.5,
+    "seed": 1729
+  },
+  "generation": "python -m applications run-all --output-dir applications/examples --summary; plot_result for SVG figures",
+  "source_files_sha256": {
+    "applications/__init__.py": "cfbd2d3189310224c5842544b4460afcf53a58ed8ca38ff7086f246677223132",
+    "applications/__main__.py": "4263b45b2874397a3f863bc9d13f4b358431e574e62286cdc3c13cbf74c555d7",
+    "applications/common.py": "2d7d34bffc75c2843bc56fad485149c4abf6484ad3881888c37266defe1232dd",
+    "applications/form_factor.py": "39b40453072c43f8e4cd6286baa5e31183a2be40443da87347484ac1530c36e5",
+    "applications/inverse_spectrum.py": "358ef02859f136a6357f022e5267559bfae7f93e459f81006a91519d45d491fb",
+    "applications/plotting.py": "c565d5020bd1fc721c3e9f3c1c512344956e8c76bfd95a8728e53c653b8b6531",
+    "applications/prime_orbits.py": "22f84a8f98945815e08f0ed4d32bbdb74999eccab256620e47c260848fc85970",
+    "applications/primon_gas.py": "e427acfe5b84455db113f92320d1f95dad317b1c72fb06abf1d7b6ae67fa3c4d",
+    "applications/proof.py": "d4d42ce3e77fedd66a29375aead1aa8a824ae360202c06704ac4629b82d6031d",
+    "applications/scattering.py": "696526d1c413969676eb47f1773cb20faa303e9822c2acaa6c2c40d67544a4ee",
+    "applications/spectral_recovery.py": "9d170305745bb0281440f8a9af2da10c3156eae0e600c817e95a137d0c112293",
+    "applications/transport.py": "ccc456675d58d782fa80efd63e8a335d9e6466a53e30f601f9a680d39cb38ac1",
+    "applications/twisted_gas.py": "205dbffd0f46b52af72303bd3e36ba9ec3fac4d6f9cfc60749e7e54ba0054ea2"
+  },
+  "validation_before_generation": {
+    "required_commands": [
+      "application_examples",
+      "unit_tests"
+    ],
+    "decapod": "0.156.1",
+    "passed": true,
+    "unit_tests_passed": 64,
+    "application_demos_passed": 8
+  },
+  "scope": "Finite numerical demonstrations with synthetic inputs; not experimental data or asymptotic proofs."
+}

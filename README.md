@@ -12,6 +12,22 @@ general successor breakthrough has not been established.
 
 The construction does not depend on the Riemann Hypothesis.
 
+## Physics applications
+
+Eight finite physics experiments live in [applications/](applications/README.md): primon thermodynamics, spectral recovery with bounded uncertainty, prime-position scattering, one-dimensional wave transport, inverse quantum spectra, a thermal form factor, smoothed prime-orbit sums and a paired charged gas.
+
+Install the optional scientific dependencies with Python 3.11 or newer:
+
+```bash
+python -m pip install '.[applications]'
+python -m applications list
+python -m applications run-all --output-dir /tmp/primeward-applications --plot --summary
+```
+
+Each result records its model, input primes, numerical checks and limitations. The default source is the certified residual engine; select `--prime-method bytearray` explicitly for larger finite populations. These examples do not change the existing sieve-performance comparison. See the [application guide](applications/README.md) and [recorded examples](applications/examples/README.md).
+
+Development is governed by the initialized Decapod project. Its living specifications describe the core and application contracts, and `decapod validate` owns the required local checks.
+
 ## What is included
 
 - `prime_successor/fast_analytic.py`: residual-state engine with a smaller

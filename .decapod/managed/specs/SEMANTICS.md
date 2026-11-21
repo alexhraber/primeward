@@ -1,82 +1,31 @@
 # Semantics
 
-## Project Purpose
-Exact prime succession through reusable arithmetic state, with reproducible numerical physics applications.
+## Exact succession
+The residual analytic state encodes an Euler-product tail after known primes have been removed. A finite mathematical bound and Arb enclosure isolate the immediate next integer prime; an update removes its factor. The retained cost is arithmetic and precision, not a guarantee of beating a sieve. The construction uses zeta but does not require the Riemann Hypothesis.
 
-## Authoring Scope and Evidence
-Project: Primeward. This is an initial authoring scaffold, not an implementation attestation.
+## Physical models
+Primon energies are log p in chosen units, with beta positive and Boltzmann's constant set to one. Infinite-product references require beta greater than one. A finite list of energy levels uses a sum of exponentials; a boson gas uses a product. Their decoders and removal rules are deliberately separate.
 
-Describe the configured project from purpose to architecture to implementation depth. Start with the whole product: its users, problem, outcomes, and boundaries; then explain the system and its components, interfaces, state, operations, security, and proof. Ground factual prose in the repository's config, README/product documentation, source paths and symbols, contracts, and tests. Distinguish implemented behavior, intended behavior, assumptions, and unresolved gaps. A narrow task changes the relevant part of this whole-project account; it must not replace project-wide identity with the latest task, release workflow, or tooling. Record task-specific scope and evidence in the current change's governance record. Templates and declared capabilities are authoring/proof obligations, not evidence that a runtime guarantee exists. Preserve authored prose during generated refreshes. If configured metadata and explicit project-level sections are absent, leave project identity unknown and ask for or author grounded context rather than promoting an arbitrary legacy/task line.
+Inferred spectral intervals carry complete bounded uncertainty through each removal. More precision narrows arithmetic error but cannot remove input uncertainty. Intersecting contradictory observations returns inconsistent; insufficient resolution returns unresolved. Ground truth appears only in synthetic data construction and coverage assessment.
 
-Use the seeded context below as a starting point to verify against repository sources. Replace example diagrams, suggested controls, targets, tables, and blank fields with source-grounded prose; mark non-applicable topics with a reason. Do not adopt a store, queue, server, CI provider, replay guarantee, or service level merely because it appears in a template.
+Scattering uses S(k)=|sum exp(-ikx)|^2/N. Delta transport assumes real barriers and identical lossless external media in units hbar^2/(2m)=1. Inverse spectra are finite-grid approximations checked on a refined grid and larger box. The orbit sum has explicit finite prime/repetition cutoffs and Gaussian smoothing. Twisted-gas phases are arbitrary parameters; no automorphic interpretation is inferred.
 
-## State Machines
-Describe the project's actual entities, states, transitions, and externally
-observable behavior. Cite implementation symbols and tests; do not substitute
-the agent's task lifecycle for the product's state model.
+## Numerical meaning
+Integer certificates and Arb enclosures have stated enclosing guarantees. Other outputs are floating-point approximations with independent diagnostics. A passed demo means its declared checks passed. It does not establish an asymptotic theorem, unique inverse potential or experimental result.
 
 ## Invariants
-| Invariant | Scope | Implementation Source | Proof or Gap |
-|---|---|---|---|
-| Identify a project-specific invariant | | | |
 
-## Event Sourcing Schema
-Only applicable if the repository actually implements event sourcing. Otherwise
-record that it is not applicable; this example is not a replay guarantee.
-| Field | Type | Description |
-|---|---|---|
-| event_id | string | globally unique event id |
-| aggregate_id | string | entity/workflow id |
-| event_type | string | semantic transition |
-| payload | object | transition data |
-| recorded_at | timestamp | append time |
+Returned integer successors remain immediate primes under the certified core contract. Removing a recovered spectral level subtracts its full exponential interval. Static scattering has S(0)=N. Real delta transport conserves flux within reported numerical tolerance. Finite thermal form factors satisfy K(0)=1. Inverse-potential coefficients remain fixed during refinement and box checks.
 
-## Replay Semantics
-- Replay order:
-- Conflict resolution:
-- Snapshot cadence:
-- Determinism proof strategy:
+## State Machines
 
-## Error Code Semantics
-- Namespace:
-- Stable compatibility window:
-- Mapping to retry/degrade behavior:
+The analytic engine initializes, decodes a successor, removes its factor and repeats, rebuilding precision state when its acceptance condition requires it. Spectral inference intersects observations, then either resolves a level and removes its interval, stops unresolved, or rejects contradictory data. The CLI generates inputs, runs a model, serializes diagnostics and exits according to those diagnostics; it does not retry failed science with changed assumptions.
 
-## Domain Rules
-- Business rule 1:
-- Business rule 2:
-- Business rule 3:
+<!-- decapod:codebase-attestation:start -->
 
-## Idempotency Contracts
-| Operation | Idempotency Key | Duplicate Behavior |
-|---|---|---|
-| Actual operation and source | Declared key, if any | Observed duplicate behavior and proof |
+## Codebase Attestation
 
-## Transition Contract
-| Current State | Trigger | Preconditions | State Mutation | Emitted Evidence | Next State |
-|---|---|---|---|---|---|
-| | | | | | |
-
-## Invariant Violation Response
-- Which invariant is checked before mutation?
-- Which invariant is checked after persistence?
-- Is the failed operation retried, rejected, compensated, or escalated?
-- What evidence distinguishes a rejected operation from an incomplete one?
-- Which state remains canonical if derived state disagrees?
-
-## Determinism and Replay Boundary
-- Inputs included in a replay:
-- Inputs deliberately excluded (wall clock, randomness, external state):
-- Ordering and conflict resolution:
-- Snapshot/checkpoint policy:
-- Proof that replay is equivalent to the original outcome:
-
-## Backward-Compatibility Semantics
-- Legacy states accepted:
-- Legacy states rewritten:
-- States that require a migration:
-- Agent instruction emitted before a breaking transition:
-- Rollback behavior if migration or replay fails:
-
-## Language Note
-- Primary language inferred: Python
+- Repository signal fingerprint: `77ec1794e03e485a3d8d927049e0a3da108dc579c40541a59790529007b51fab`
+- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (4 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (8 files)
+- Refreshed from the current codebase by `decapod rpc --op specs.refresh`
+<!-- decapod:codebase-attestation:end -->
