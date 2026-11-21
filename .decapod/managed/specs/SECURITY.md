@@ -32,6 +32,17 @@ Relevant risks include malicious dependency substitution, accidental output over
 
 The record experiment accepts a bounded integer exponent and fixed seed/precision guards. It never raises those guards to allocate the record-scale history. The historical work-branch workflow parsed its quoted environment input as an integer, used read-only contents permission and persisted no checkout credentials. Each numerical case has process resource limits. The proposed permanent workflow and policy change were removed after the accepted-contract gate rejected the transition; the final candidate preserves that contract and does not claim policy.control approval.
 
+## Current Manual Successor Workflow
+
+The separate GitHub Actions workflow for bounded next-prime research
+has read-only content permissions, input validation at the Python
+boundary and a 10-minute job timeout. It retains neither credentials
+nor the original massive input integer. The existing mandatory
+Decapod Validate workflow and its accepted repository proof commands
+are unchanged. This is a new explicitly requested, optional
+research workflow; it is not a waiver of the accepted proof contract
+or of any required policy authorization.
+
 <!-- decapod:codebase-attestation:start -->
 
 ## Codebase Attestation

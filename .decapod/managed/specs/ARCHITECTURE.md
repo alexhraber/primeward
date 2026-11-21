@@ -79,6 +79,21 @@ Finite cutoffs in orbit sums and scattering are reported and do not imply asympt
 
 `experiments/record_successor.py` separates compact Arb resource analysis from an actual bounded constructor probe. A fresh subprocess owns each numerical case, with explicit time and memory limits. The observed GitHub work-branch run had independent target and calibration jobs; its original reports and source provenance are committed under research/record_successor_runs. The final candidate retains the accepted CI workflow and proof contract. The existing physics modules and prime engines remain unchanged.
 
+## Bounded Record-Scale Screening and Trace Studies
+
+The new record_gap module is independent of FastAnalyticSuccessor. It
+describes candidate integers symbolically as 2^exponent - 1 + 2*k
+and screens arithmetic progressions using modular inverses for odd
+small primes. It stores one divisor witness per excluded offset.
+It provides a certified small-seed successor only if the tested
+divisor bound reaches the square root of the first survivor.
+
+The orbital_trace module computes a finite Gaussian Poisson identity
+for the positive real logarithmic circle. Its input gamma may be
+composite, and this module is not a prime detector or substitute for
+the exact analytic engine. The record-scale screened survivors must
+remain unproven.
+
 <!-- decapod:codebase-attestation:start -->
 
 ## Codebase Attestation

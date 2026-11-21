@@ -41,6 +41,15 @@
         "research/record_gap_runs/2026-11-20/record.json",
         "tests/test_record_gap.py"
       ]
+    },
+    {
+      "id": "primeward-living-specs-02",
+      "summary": "Document bounded next-prime research CI and its exactness limits in living specs",
+      "input_digest": "sha256:758ff97f6d17c4bdadd0ea8cc950f48304830b3d5729e267ff764158d4921fcd",
+      "proof_refs": [
+        ".github/workflows/primeward-successor-experiment.yml",
+        "tests/test_record_gap.py"
+      ]
     }
   ],
   "intents": {
@@ -90,23 +99,23 @@
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/ARCHITECTURE.md",
-          "reason": "Reviewed bounded modular successor experiment, finite orbital model, resource-controlled workflow and unchanged analytic engine.",
+          "reason": "Recorded new modular-sieve and finite orbital-trace computational lanes, distinct from the exact analytic engine.",
           "reviewed_code_fingerprint": "52562308a97b5c481078238af8c56bcb900e33b025636d59584043066cde24ea",
-          "spec_material_hash": "ab785e49e709e035d2c4f696a65558c3fc3128f5ac41eb0f271c4c19397aab60"
+          "spec_material_hash": "0395c90361a548057d2f07d38b58f912335f5abd1e8b560f16b8fbb63a5c2408"
         },
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/INTERFACES.md",
-          "reason": "Reviewed prime-gap JSON statuses, full-square-root certification for small seeds, workflow inputs, and explicit record-scale unknowns.",
+          "reason": "Defined bounded CLI parameters, documented JSON status and certification semantics.",
           "reviewed_code_fingerprint": "52562308a97b5c481078238af8c56bcb900e33b025636d59584043066cde24ea",
-          "spec_material_hash": "39d6bf45b8f13b3aa5197b31038abc0d0039d6529ae5658bf0196e69b929d627"
+          "spec_material_hash": "240e1ed9f454b9c297c07da36e11a25b53b1d70b0b6c85db916e81efcf04e683"
         },
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/SECURITY.md",
-          "reason": "Reviewed bounded input limits, read-only GitHub permissions, ten-minute timeout, and unchanged repository CI proof profile.",
+          "reason": "Documented read-only manually dispatchable workflow and separation from mandatory CI proof.",
           "reviewed_code_fingerprint": "52562308a97b5c481078238af8c56bcb900e33b025636d59584043066cde24ea",
-          "spec_material_hash": "fe6dab39e97567fa2ffca665c9c9930a12ef14d4daa89a38348cc9c46be4df7d"
+          "spec_material_hash": "2e527d283114c27ed2f2f57021db91b0c9a4593855073717f9f56095e69f3825"
         }
       ],
       "state": "APPROVED",
@@ -117,7 +126,7 @@
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1795241636Z"
+      "updated_at": "1795241743Z"
     },
     "trajectory": {
       "active_boundaries": [

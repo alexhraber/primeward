@@ -30,6 +30,20 @@ Before publishing, review the bounded task scope, refresh authored specification
 
 `tests/test_record_successor.py` checks record-scale symbolic magnitudes without allocating history, verifies that the seed refusal precedes the sieve, distinguishes precision and composite-input errors, validates exact smaller successors independently, and checks worker/CLI output. The separate GitHub run supplies actual record-input rejection and calibration evidence. It cannot be inferred from local test success alone.
 
+## Record-Scale Screening and Orbital-Trace Checks
+
+Tests in test_record_gap independently verify proper divisor witnesses,
+the small-seed successor against trial division, the record-scale
+unproven status, resource caps and CLI JSON. Tests in
+test_orbital_trace check several logarithmic resolutions, off-grid
+centers, rejection of insufficient mode budgets, and the identical
+Poisson identity for composite gamma.
+
+The optional primeward-successor-experiment GitHub Actions workflow
+repeats these tests and the bounded record calculation on the actual
+runner, writing a summary and retained JSON artifacts. Success means
+the bounded experiment passed; it never certifies an unknown survivor.
+
 <!-- decapod:codebase-attestation:start -->
 
 ## Codebase Attestation

@@ -10,12 +10,12 @@
     {
       "path": ".decapod/managed/specs/.manifest.json",
       "bytes": 4001,
-      "sha256": "f63310720a2034c11a49a6138d99ac9968aa61d4279f3f6fba7febbd91838370"
+      "sha256": "446d454fac012500a0299577375e0089f818bb1c89867f6bb4ef6b95cd025144"
     },
     {
       "path": ".decapod/managed/specs/ARCHITECTURE.md",
-      "bytes": 5196,
-      "sha256": "59242283fc3eed6e71d428de90b4e24549d89de34114b2504172279761c42e1f"
+      "bytes": 5932,
+      "sha256": "518048daae5614c002a6a2b7d6277fa5d983681bb529058b4c7e27a3d704a47a"
     },
     {
       "path": ".decapod/managed/specs/INTENT.md",
@@ -24,8 +24,8 @@
     },
     {
       "path": ".decapod/managed/specs/INTERFACES.md",
-      "bytes": 3433,
-      "sha256": "d5cbc2db299e0463d348a955c03f931bbe4467be2070e19fcaeefac079d3d576"
+      "bytes": 4192,
+      "sha256": "1061dde14de1614ce42a89ec93879549bb1b6933337e531df4fe0dc972be6466"
     },
     {
       "path": ".decapod/managed/specs/OPERATIONS.md",
@@ -39,8 +39,8 @@
     },
     {
       "path": ".decapod/managed/specs/SECURITY.md",
-      "bytes": 4115,
-      "sha256": "58dc39da3943a26b1e085fbd1ad0efb0c3c46d6fe4a93538c183bfa42598f498"
+      "bytes": 4660,
+      "sha256": "43505a9415d686dcb7012f08565336c99822680c08c613cc1388335cf850c5af"
     },
     {
       "path": ".decapod/managed/specs/SEMANTICS.md",
@@ -49,8 +49,8 @@
     },
     {
       "path": ".decapod/managed/specs/VALIDATION.md",
-      "bytes": 3990,
-      "sha256": "564f085054dfc25e200a457fc0c1a4e871e14e1289577e0898b372c50766b2ab"
+      "bytes": 4685,
+      "sha256": "3455f4a37ec0d028c2ecb016b1a08aaf7528b9f8daec2fc78079786d376b2e70"
     },
     {
       "path": ".github/workflows/decapod-validate.yml",
