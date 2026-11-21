@@ -1,7 +1,7 @@
 {
   "package": "primeward",
   "version": "0.2.0",
-  "created_utc": "2026-11-21T03:09:59.575182+00:00",
+  "created_utc": "2026-11-21T05:31:07.923557+00:00",
   "exclusions": [
     "MANIFEST.json",
     ".decapod/** (Decapod-owned attestations and runtime state)"
@@ -39,8 +39,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10717,
-      "sha256": "bc362894815ada5da997fabec4d3d91aedcf587f10789ae8b0bc369b08675a6f"
+      "bytes": 11177,
+      "sha256": "0e6663e8e691b0e0ceefdcc60a391afe067467b65f5fe87d0189b930b00d6c49"
     },
     {
       "path": "applications/README.md",
@@ -228,6 +228,11 @@
       "sha256": "2765715db60903ab8847120c43e56612e74f43c88307d70fdb0583dee5ba761a"
     },
     {
+      "path": "experiments/record_successor.py",
+      "bytes": 11706,
+      "sha256": "323d16326a2987520e5605421bbbdd1e23fe4d4e4a44787d02207a2b43d7df93"
+    },
+    {
       "path": "experiments/weighted_history.py",
       "bytes": 20638,
       "sha256": "72772df6e5d357db3707509ec2deb9cf090710343f16d551a7134739560a4522"
@@ -301,6 +306,21 @@
       "path": "research/performance.md",
       "bytes": 7909,
       "sha256": "8a138421ada0980d6e2f456d4168a8a43940971264d1d6ac19f6e1a38aa076af"
+    },
+    {
+      "path": "research/record_successor.md",
+      "bytes": 5760,
+      "sha256": "6e41c4f3dec1c9c9a923033581d358d70a17b2c651de5417f575c595a3a8ba5c"
+    },
+    {
+      "path": "research/record_successor_runs/44870723187/calibration.json",
+      "bytes": 10197,
+      "sha256": "6495dd21f1a164dacc94b8ccc77532988cd018f6d077f9e16dbcd18aa0b5de41"
+    },
+    {
+      "path": "research/record_successor_runs/44870723187/target.json",
+      "bytes": 2367,
+      "sha256": "d893f5b789170e2019704355827a8de20b64532f5e8e97014992af605835bcd9"
     },
     {
       "path": "research/theory_review.md",
@@ -431,6 +451,11 @@
       "path": "tests/test_optimized.py",
       "bytes": 3597,
       "sha256": "a4258cca1c2bf276762790588e445905d6d3d6fff24bec27cb74ca0f59709c29"
+    },
+    {
+      "path": "tests/test_record_successor.py",
+      "bytes": 3865,
+      "sha256": "d6b1e374d7d9dda669937ab3137e74db20aca786bf01bc90709b6e5d4f10c2d1"
     }
   ]
 }

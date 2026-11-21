@@ -21,11 +21,15 @@ The core calls python-flint. The inverse solver calls NumPy and SciPy; plots cal
 
 Failed scientific checks return status 1 with their diagnostics preserved. Argument/dependency/model errors return status 2. Spectral recovery reports unresolved input uncertainty separately from inconsistent observations. JSON never substitutes a finite-looking value for overflow; logs and explicit flags carry that condition.
 
+## Record Experiment Interface
+
+`python -m experiments.record_successor target|calibrate` accepts an exponent, timeout, memory bound and output path. The record target defaults to exponent 136279841. Results distinguish certified, blocked_max_seed, blocked_precision, timeout and process_failed. Workflow completion is distinct from `successor_certified`. The worker never serializes the enormous starting integer; its expression and bit length identify it.
+
 <!-- decapod:codebase-attestation:start -->
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `77ec1794e03e485a3d8d927049e0a3da108dc579c40541a59790529007b51fab`
-- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (4 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (8 files)
+- Repository signal fingerprint: `b3ea6fc7d61c9f2b597a04cc2a70abe27a08a5143f47b717086beac5716f8449`
+- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (5 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (9 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->

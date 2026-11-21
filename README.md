@@ -204,3 +204,7 @@ that argument or a new discovery of prime succession.
 The next research target is reducing the information and precision needed to
 initialize, update, and decode the exact state. The weighted-history experiment
 tests one proposed compression route and records both successes and failures.
+
+## Record-scale successor experiment
+
+The [record experiment](research/record_successor.md) ran the actual M136279841 input through the existing constructor on GitHub Actions. It stopped at the seed limit and produced no successor for that target. The same run certified 31 → 37, 127 → 131 and 8191 → 8209. The harness, original reports and initialization analysis are included; the current complete-prefix initialization cannot reach the record scale.
