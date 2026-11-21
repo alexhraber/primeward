@@ -25,11 +25,27 @@ Failed scientific checks return status 1 with their diagnostics preserved. Argum
 
 `python -m experiments.record_successor target|calibrate` accepts an exponent, timeout, memory bound and output path. The record target defaults to exponent 136279841. Results distinguish certified, blocked_max_seed, blocked_precision, timeout and process_failed. Workflow completion is distinct from `successor_certified`. The worker never serializes the enormous starting integer; its expression and bit length identify it.
 
+## Bounded Modular and Orbital Experiments
+
+The record-gap command takes --exponent, --span, --trial-limit,
+--preview and --out. Values are capped before allocation.
+Its JSON schema primeward.mersenne_gap.v1 has statuses
+certified_successor, partial_screen and all_screened_candidates_composite.
+Only certified_successor carries a numerical successor.
+The first_unexcluded_candidate expression is an unproven candidate,
+and lower_bound_distance_to_next_prime is a bound from witnessed
+proper factors, not an exact gap.
+
+The orbital-trace command takes --gamma, --width, --center,
+--tolerance, --max-modes and --out. Its output is numerical and
+includes the Fourier-tail truncation bound; it is not an exact
+interval-arithmetic or prime-certification result.
+
 <!-- decapod:codebase-attestation:start -->
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `b3ea6fc7d61c9f2b597a04cc2a70abe27a08a5143f47b717086beac5716f8449`
-- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (5 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (9 files)
+- Repository signal fingerprint: `a0e7b140dd1dc81cfc14087a52a8a3e3fc46a278313c71c9de905c516c0f77d0`
+- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (7 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (11 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->

@@ -1,0 +1,82 @@
+{
+  "candidates_not_excluded": 15542,
+  "candidates_proven_composite": 184458,
+  "composite_witness_samples": [
+    {
+      "divisor": 3,
+      "offset_k": 1
+    },
+    {
+      "divisor": 5,
+      "offset_k": 2
+    },
+    {
+      "divisor": 37,
+      "offset_k": 3
+    },
+    {
+      "divisor": 3,
+      "offset_k": 4
+    },
+    {
+      "divisor": 11,
+      "offset_k": 5
+    },
+    {
+      "divisor": 43,
+      "offset_k": 6
+    },
+    {
+      "divisor": 3,
+      "offset_k": 7
+    },
+    {
+      "divisor": 17,
+      "offset_k": 8
+    },
+    {
+      "divisor": 7,
+      "offset_k": 9
+    },
+    {
+      "divisor": 3,
+      "offset_k": 10
+    },
+    {
+      "divisor": 5,
+      "offset_k": 12
+    },
+    {
+      "divisor": 3,
+      "offset_k": 13
+    }
+  ],
+  "elapsed_seconds": 0.343584,
+  "exponent": 136279841,
+  "factor_primes_used": 148933,
+  "first_unexcluded_candidate": "2^136279841-1+22",
+  "first_unexcluded_offset_k": 11,
+  "lower_bound_distance_to_next_prime": 22,
+  "notes": "A nonexcluded candidate has no factor up to trial_limit; it is not a proven prime. Only a full square-root trial bound certifies it. This method does not certify a successor at the record scale.",
+  "schema_version": "primeward.mersenne_gap.v1",
+  "span": 200000,
+  "start": "2^136279841-1",
+  "status": "partial_screen",
+  "successor": null,
+  "successor_certified": false,
+  "trial_limit": 2000000,
+  "unexcluded_offset_samples": [
+    11,
+    35,
+    50,
+    63,
+    68,
+    80,
+    98,
+    99,
+    101,
+    105,
+    119,
+    123
+  ]
+}

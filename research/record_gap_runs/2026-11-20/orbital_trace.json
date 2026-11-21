@@ -1,0 +1,13 @@
+{
+  "center": 4.61512051684126,
+  "difference": 2.4703905587841746e-11,
+  "fourier_sum": 0.9999999999752961,
+  "gamma": 101.0,
+  "logarithmic_width": 0.002,
+  "note": "Finite Gaussian/Poisson toy model; gamma can be composite. Spectral truncation bound excludes floating-point roundoff. Does not find primes or imply the Riemann Hypothesis.",
+  "orbit_terms": 9,
+  "orbital_sum": 1.0,
+  "positive_modes": 2451,
+  "schema_version": "primeward.orbital_trace.v1",
+  "spectral_truncation_bound": 2.4934315205631915e-11
+}

@@ -32,11 +32,22 @@ Relevant risks include malicious dependency substitution, accidental output over
 
 The record experiment accepts a bounded integer exponent and fixed seed/precision guards. It never raises those guards to allocate the record-scale history. The historical work-branch workflow parsed its quoted environment input as an integer, used read-only contents permission and persisted no checkout credentials. Each numerical case has process resource limits. The proposed permanent workflow and policy change were removed after the accepted-contract gate rejected the transition; the final candidate preserves that contract and does not claim policy.control approval.
 
+## Current Manual Successor Workflow
+
+The separate GitHub Actions workflow for bounded next-prime research
+has read-only content permissions, input validation at the Python
+boundary and a 10-minute job timeout. It retains neither credentials
+nor the original massive input integer. The existing mandatory
+Decapod Validate workflow and its accepted repository proof commands
+are unchanged. This is a new explicitly requested, optional
+research workflow; it is not a waiver of the accepted proof contract
+or of any required policy authorization.
+
 <!-- decapod:codebase-attestation:start -->
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `b3ea6fc7d61c9f2b597a04cc2a70abe27a08a5143f47b717086beac5716f8449`
-- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (5 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (9 files)
+- Repository signal fingerprint: `a0e7b140dd1dc81cfc14087a52a8a3e3fc46a278313c71c9de905c516c0f77d0`
+- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (7 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (11 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->

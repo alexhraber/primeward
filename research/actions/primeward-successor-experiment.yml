@@ -1,0 +1,90 @@
+# CI-only workflow template. Not active until reviewed and explicitly
+# approved as a new workflow in the repository's Decapod policy.control
+# transition, then moved into .github/workflows.
+name: Primeward Next-Prime Experiment
+on:
+  workflow_dispatch:
+    inputs:
+      exponent:
+        description: 'Mersenne exponent (record: 136279841)'
+        required: true
+        type: string
+        default: '136279841'
+      span:
+        description: 'Odd offsets to screen (1..200000)'
+        required: true
+        type: string
+        default: '200000'
+      trial_limit:
+        description: 'Prime-factor ceiling (3..2000000)'
+        required: true
+        type: string
+        default: '2000000'
+  push:
+    branches: [main]
+    paths:
+      - 'research/actions/primeward-successor-experiment.yml'
+      - 'experiments/record_gap.py'
+      - 'experiments/orbital_trace.py'
+      - 'tests/test_record_gap.py'
+      - 'tests/test_orbital_trace.py'
+permissions:
+  contents: read
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      EXPONENT: ${{ inputs.exponent || '136279841' }}
+      SPAN: ${{ inputs.span || '200000' }}
+      TRIAL_LIMIT: ${{ inputs.trial_limit || '2000000' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: Test independent small-scale cases
+        run: python -B -m unittest tests.test_record_gap tests.test_orbital_trace -v
+      - name: Screen Mersenne target without constructing its huge integer
+        run: |
+          mkdir -p artifacts
+          python -B -m experiments.record_gap --exponent "$EXPONENT" \
+            --span "$SPAN" --trial-limit "$TRIAL_LIMIT" --out artifacts/record.json
+      - name: Certify calibration successors
+        run: |
+          for exponent in 5 7 13; do
+            python -B -m experiments.record_gap --exponent "$exponent" \
+              --span 40 --trial-limit 200 --out "artifacts/calibration-$exponent.json" >/dev/null
+          done
+      - name: Reproduce finite Poisson-orbit identity
+        run: |
+          python -B -m experiments.orbital_trace --gamma 101 \
+            --width 0.002 --out artifacts/orbital-trace.json >/dev/null
+      - name: Summarize outcomes
+        run: |
+          python - <<'PY'
+          import json, os, pathlib
+          p = pathlib.Path("artifacts")
+          x = json.loads((p/"record.json").read_text())
+          for e in (5, 7, 13):
+              assert json.loads((p/f"calibration-{e}.json").read_text())["successor_certified"]
+          assert json.loads((p/"orbital-trace.json").read_text())["difference"] < 1e-9
+          text = ("# Primeward next-prime experiment\n\n"
+                  f"Target: {x['start']}\n\n"
+                  f"Screened: {x['span']} odd candidates; "
+                  f"{x['candidates_proven_composite']} proven composite.\n\n"
+                  f"First survivor offset: {x['first_unexcluded_offset_k']}\n\n"
+                  f"Certified successor: {x['successor_certified']}\n\n"
+                  "Survivors are not proven prime without a certificate.\n")
+          pathlib.Path(os.environ["GITHUB_STEP_SUMMARY"]).write_text(text)
+          (p/"summary.md").write_text(text)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: primeward-next-prime-${{ github.run_id }}
+          path: artifacts/
+          if-no-files-found: warn
+          retention-days: 30

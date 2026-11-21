@@ -30,11 +30,25 @@ Before publishing, review the bounded task scope, refresh authored specification
 
 `tests/test_record_successor.py` checks record-scale symbolic magnitudes without allocating history, verifies that the seed refusal precedes the sieve, distinguishes precision and composite-input errors, validates exact smaller successors independently, and checks worker/CLI output. The separate GitHub run supplies actual record-input rejection and calibration evidence. It cannot be inferred from local test success alone.
 
+## Record-Scale Screening and Orbital-Trace Checks
+
+Tests in test_record_gap independently verify proper divisor witnesses,
+the small-seed successor against trial division, the record-scale
+unproven status, resource caps and CLI JSON. Tests in
+test_orbital_trace check several logarithmic resolutions, off-grid
+centers, rejection of insufficient mode budgets, and the identical
+Poisson identity for composite gamma.
+
+The optional primeward-successor-experiment GitHub Actions workflow
+repeats these tests and the bounded record calculation on the actual
+runner, writing a summary and retained JSON artifacts. Success means
+the bounded experiment passed; it never certifies an unknown survivor.
+
 <!-- decapod:codebase-attestation:start -->
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `b3ea6fc7d61c9f2b597a04cc2a70abe27a08a5143f47b717086beac5716f8449`
-- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (5 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (9 files)
+- Repository signal fingerprint: `a0e7b140dd1dc81cfc14087a52a8a3e3fc46a278313c71c9de905c516c0f77d0`
+- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (7 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (11 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->
