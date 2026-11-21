@@ -208,3 +208,14 @@ tests one proposed compression route and records both successes and failures.
 ## Record-scale successor experiment
 
 The [record experiment](research/record_successor.md) ran the actual M136279841 input through the existing constructor on GitHub Actions. It stopped at the seed limit and produced no successor for that target. The same run certified 31 → 37, 127 → 131 and 8191 → 8209. The harness, original reports and initialization analysis are included; the current complete-prefix initialization cannot reach the record scale.
+
+### Record-scale successor experiments
+
+The [bounded next-prime workflow](.github/workflows/primeward-successor-experiment.yml)
+screens candidate offsets above the record Mersenne prime using small-prime
+modular arithmetic, and separately tests a finite orbital trace identity.
+Its reports distinguish composite witnesses, certified small successors,
+and candidates whose primality is unresolved. It does not claim to have
+discovered the next record-sized prime.
+
+[Reproduce the run and review the mathematical limits](research/record_gap_and_trace.md).

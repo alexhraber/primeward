@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "baseline": {
-    "accepted_commit": "cd1d0ed339ce65d0f531bf491c3a6d7ebeb46fb3",
+    "accepted_commit": "99b7e6be1e32c6a960ae228ae434ce0866349639",
     "unresolved": {
       "trajectory:322cb903c031fdd4": "Synthetic finite physics models require stated units and truncations. Exact prime recovery uses the existing Arb engine; floating-point models do not inherit its certificate.",
       "trajectory:488dea8df09eba13": "The compact runtime has 102 measured files including a standard-library ZIP, native Python/modules, system libraries and a complete scientific dependency archive. The immutable proof entry point extracts only regular files/directories inside owned scratch, disables ambient site processing and passes the extracted package path to child Python. Import diagnostic confirmed NumPy 2.3.5, SciPy 1.17.0, python-flint 0.9.0 and Matplotlib 3.10.8. This supersedes the earlier unpacked-runtime declaration.",
@@ -9,41 +9,42 @@
     }
   },
   "change": {
-    "id": "change_01M7Y9PDB3EMZEDG5KN8F5QFV1",
-    "base_commit": "cd1d0ed339ce65d0f531bf491c3a6d7ebeb46fb3",
+    "id": "change_01M7YBHZ9T4P3Z9ZZM6SG4WXW6",
+    "base_commit": "99b7e6be1e32c6a960ae228ae434ce0866349639",
     "target_base": "origin/main"
   },
-  "resolutions": {
-    "history-recovery:feefdfcf3fb9015f094db5de0b6c28b998c1130c": {
-      "obligation_digest": "sha256:80589d2541fbd41d4fea71a46b73cd44db10a072d581b52c4187bd7cb2c83a8b",
-      "resolution": "Reviewed source was reauthored in the fresh accepted-base workstream and archived in 524b92ba5cb6fc5e4f85d32b79ef8749d1f5f924 with a verified in-commit artifact checkpoint. Old commits remain unproven and preserved; this resolution does not claim retrospective proof.",
+  "claims": {
+    "gap-screen-witness": {
+      "statement": "Each of the 184458 marked record candidates has a proper prime factor not exceeding 2000000; none of the 15542 survivors is asserted prime.",
+      "falsifier": "Exhibit a marked candidate with invalid factor or a survivor classified as certified without complete trial coverage.",
+      "status": "supported",
       "proof_refs": [
-        "524b92ba5cb6fc5e4f85d32b79ef8749d1f5f924",
-        "https://github.com/alexhraber/primeward/actions/runs/44870723187"
+        "research/record_gap_runs/2026-11-20/record.json",
+        "tests/test_record_gap.py"
+      ]
+    },
+    "orbital-toy": {
+      "statement": "The finite Gaussian orbital trace agrees numerically with the Fourier sum at the tested scale and does not distinguish prime from composite gamma.",
+      "falsifier": "A finite reference case violates the recorded error tolerance or the implementation treats composite gamma as prime.",
+      "status": "supported",
+      "proof_refs": [
+        "tests/test_orbital_trace.py"
       ]
     }
   },
   "checkpoints": [
     {
-      "id": "record-successor-recovery-material-v1",
-      "summary": "Reauthor bounded analytic successor experiment and preserve historical run evidence",
-      "input_digest": "sha256:b823684ca320c124cf533a2fc844cc0a172bf0a223149bee8c52e6d1ac53f148",
+      "id": "primeward-modular-trace-01",
+      "summary": "Add bounded record-scale factor witnesses, orbital trace checks, and manual GitHub Actions experiment",
+      "input_digest": "sha256:4c44fd3081cdc222906db521f755f58169839a4d4223efdd9d33f914a7a865e0",
       "proof_refs": [
-        "feefdfcf3fb9015f094db5de0b6c28b998c1130c",
-        "https://github.com/alexhraber/primeward/actions/runs/44870723187"
-      ]
-    },
-    {
-      "id": "record-successor-recovery-resolution-v1",
-      "summary": "Record current evidence that reviewed experiment material was reauthored with a valid checkpoint; retain historical failure without retrospective approval",
-      "input_digest": "sha256:98e30fe2ab54f4bc9465e2de76b5b8bdd739249e99c761034efbadd578a17aed",
-      "proof_refs": [
-        "524b92ba5cb6fc5e4f85d32b79ef8749d1f5f924"
+        "research/record_gap_runs/2026-11-20/record.json",
+        "tests/test_record_gap.py"
       ]
     }
   ],
   "intents": {
-    "intent:change_01M7Y9PDB3EMZEDG5KN8F5QFV1": {
+    "intent:change_01M7YBHZ9T4P3Z9ZZM6SG4WXW6": {
       "acceptance_criteria": [],
       "assumptions": [],
       "boundaries": [
@@ -53,19 +54,20 @@
         "experiments",
         "tests",
         "research",
+        ".github/workflows",
         "README.md",
         "MANIFEST.json",
         ".decapod/managed/specs"
       ],
       "created_sequence": 1,
-      "id": "intent:change_01M7Y9PDB3EMZEDG5KN8F5QFV1",
+      "id": "intent:change_01M7YBHZ9T4P3Z9ZZM6SG4WXW6",
       "instruction_origin": {
         "source_ref": "caller:unverified"
       },
       "out_of_scope": [],
       "proof_requirements": [],
-      "raw_intent": "Publish reviewed record experiment with current checkpoint evidence\n\nReauthor the reviewed bounded successor harness, regression tests, original GitHub Actions reports from run 44870723187 and scientific analysis from accepted main. Preserve prior failed history at feefdfcf; use the official history recovery workflow and exact candidate validation. Keep the accepted CI configuration unchanged. User authorized publishing and merging main. No record successor was found.",
-      "refined_intent": "Publish reviewed record experiment with current checkpoint evidence\n\nReauthor the reviewed bounded successor harness, regression tests, original GitHub Actions reports from run 44870723187 and scientific analysis from accepted main. Preserve prior failed history at feefdfcf; use the official history recovery workflow and exact candidate validation. Keep the accepted CI configuration unchanged. User authorized publishing and merging main. No record successor was found.",
+      "raw_intent": "Develop certified modular successor screening and trace-orbit experiments\n\nUser requests publish to GitHub and merge main, ideally new GitHub Actions compute code for next prime. Add bounded Mersenne successor modular sieve returning witnesses, honest unresolved status for record, independent calibrations and research notes. Add finite Poisson orbital toy experiment grounded in Masullo pages 17-19/40-41. Create manually dispatchable GitHub Actions workflow with strict resource/time limits and JSON artifacts; do not change accepted CI validation contract. Verify and merge if Decapod admits.",
+      "refined_intent": "Develop certified modular successor screening and trace-orbit experiments\n\nUser requests publish to GitHub and merge main, ideally new GitHub Actions compute code for next prime. Add bounded Mersenne successor modular sieve returning witnesses, honest unresolved status for record, independent calibrations and research notes. Add finite Poisson orbital toy experiment grounded in Masullo pages 17-19/40-41. Create manually dispatchable GitHub Actions workflow with strict resource/time limits and JSON artifacts; do not change accepted CI validation contract. Verify and merge if Decapod admits.",
       "status": "refined",
       "updated_sequence": 3
     }
@@ -78,7 +80,7 @@
       },
       "deferred_questions": [],
       "human_questions": [],
-      "intent": "Publish reviewed record experiment with current checkpoint evidence\n\nReauthor the reviewed bounded successor harness, regression tests, original GitHub Actions reports from run 44870723187 and scientific analysis from accepted main. Preserve prior failed history at feefdfcf; use the official history recovery workflow and exact candidate validation. Keep the accepted CI configuration unchanged. User authorized publishing and merging main. No record successor was found.",
+      "intent": "Develop certified modular successor screening and trace-orbit experiments\n\nUser requests publish to GitHub and merge main, ideally new GitHub Actions compute code for next prime. Add bounded Mersenne successor modular sieve returning witnesses, honest unresolved status for record, independent calibrations and research notes. Add finite Poisson orbital toy experiment grounded in Masullo pages 17-19/40-41. Create manually dispatchable GitHub Actions workflow with strict resource/time limits and JSON artifacts; do not change accepted CI validation contract. Verify and merge if Decapod admits.",
       "phases": [],
       "proof_hooks": [
         "decapod validate"
@@ -88,71 +90,75 @@
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/ARCHITECTURE.md",
-          "reason": "Reviewed the fresh subprocess harness, immutable hosted report provenance, and unchanged prime engines and accepted CI contract.",
-          "reviewed_code_fingerprint": "b3ea6fc7d61c9f2b597a04cc2a70abe27a08a5143f47b717086beac5716f8449",
+          "reason": "Reviewed bounded modular successor experiment, finite orbital model, resource-controlled workflow and unchanged analytic engine.",
+          "reviewed_code_fingerprint": "52562308a97b5c481078238af8c56bcb900e33b025636d59584043066cde24ea",
           "spec_material_hash": "ab785e49e709e035d2c4f696a65558c3fc3128f5ac41eb0f271c4c19397aab60"
         },
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/INTERFACES.md",
-          "reason": "Reviewed exact CLI bounds, strict JSON outcomes, absence of record-integer serialization, and independent successor verification.",
-          "reviewed_code_fingerprint": "b3ea6fc7d61c9f2b597a04cc2a70abe27a08a5143f47b717086beac5716f8449",
+          "reason": "Reviewed prime-gap JSON statuses, full-square-root certification for small seeds, workflow inputs, and explicit record-scale unknowns.",
+          "reviewed_code_fingerprint": "52562308a97b5c481078238af8c56bcb900e33b025636d59584043066cde24ea",
           "spec_material_hash": "39d6bf45b8f13b3aa5197b31038abc0d0039d6529ae5658bf0196e69b929d627"
         },
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/SECURITY.md",
-          "reason": "Reviewed bounded resources and public reports, retained default engine guards, excluded session credentials and preserved the accepted workflow/configuration. Earlier rejected policy/history candidates remain explicitly preserved, not approved.",
-          "reviewed_code_fingerprint": "b3ea6fc7d61c9f2b597a04cc2a70abe27a08a5143f47b717086beac5716f8449",
+          "reason": "Reviewed bounded input limits, read-only GitHub permissions, ten-minute timeout, and unchanged repository CI proof profile.",
+          "reviewed_code_fingerprint": "52562308a97b5c481078238af8c56bcb900e33b025636d59584043066cde24ea",
           "spec_material_hash": "fe6dab39e97567fa2ffca665c9c9930a12ef14d4daa89a38348cc9c46be4df7d"
         }
       ],
       "state": "APPROVED",
       "stop_conditions": [],
-      "title": "Publish reviewed record experiment with current checkpoint evidence",
+      "title": "Develop certified modular successor screening and trace-orbit experiments",
       "todo_ids": [
-        "cicd_01m7y9ntpfj2afpc"
+        "arch_01m7ybhhdv02t1wv"
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1795239490Z"
+      "updated_at": "1795241636Z"
     },
     "trajectory": {
       "active_boundaries": [
         "Current claimed task and isolated work branch",
-        "Preserve accepted CI configuration and required proof; no policy transition or retrospective checkpoint claim."
+        "Do not claim exact successor at record scale; modular survivors remain unproven; trace experiment is finite toy identity."
       ],
-      "artifact_hash": "sha256:53354295a5ef7e6b5cfb48022fe8dcedc148b9ea03004391f3dc368efeb6bfdf",
+      "artifact_hash": "sha256:20f8b551dcc269bbd2b912d2910f74471b4b4d2b5a74c069c8b5792179a49af3",
       "checks": [
         {
-          "name": "hosted_calibration",
+          "name": "applications",
           "status": "passed"
         },
         {
-          "name": "hosted_record_probe",
+          "name": "record_target_successor",
+          "status": "partial"
+        },
+        {
+          "name": "unit_tests",
           "status": "passed"
         }
       ],
-      "completion_claim": "The record target has no recovered successor; the bounded experiment completed.",
-      "current_phase": "review",
+      "completion_claim": "Publish a reproducible bounded record-scale candidate screen and finite orbital trace; no next prime at the record is claimed.",
+      "current_phase": "implementation",
       "custody": {
         "events": [
           {
             "event_id": "event:2",
-            "intent_id": "intent:change_01M7Y9PDB3EMZEDG5KN8F5QFV1",
+            "intent_id": "intent:change_01M7YBHZ9T4P3Z9ZZM6SG4WXW6",
             "kind": "created",
             "sequence": 2
           },
           {
             "event_id": "event:3",
-            "intent_id": "intent:change_01M7Y9PDB3EMZEDG5KN8F5QFV1",
+            "intent_id": "intent:change_01M7YBHZ9T4P3Z9ZZM6SG4WXW6",
             "kind": "refined",
             "sequence": 3
           },
           {
-            "detail": "trajectory:branch_01M7Y9PDBKDR74FSQP2NHKMSSE",
+            "detail": "trajectory:branch_01M7YBHZAAE8K3B4ZYN093SPBB",
             "event_id": "event:4",
-            "intent_id": "intent:change_01M7Y9PDB3EMZEDG5KN8F5QFV1",
+            "intent_id": "intent:change_01M7YBHZ9T4P3Z9ZZM6SG4WXW6",
             "kind": "trajectory_step_recorded",
             "sequence": 4
           }
@@ -161,27 +167,29 @@
         "next_sequence": 4,
         "schema_version": "1.1.0",
         "trajectories": {
-          "branch_01M7Y9PDBKDR74FSQP2NHKMSSE": {
+          "branch_01M7YBHZAAE8K3B4ZYN093SPBB": {
             "evidence_only": true,
-            "id": "branch_01M7Y9PDBKDR74FSQP2NHKMSSE",
-            "intent_id": "intent:change_01M7Y9PDB3EMZEDG5KN8F5QFV1",
+            "id": "branch_01M7YBHZAAE8K3B4ZYN093SPBB",
+            "intent_id": "intent:change_01M7YBHZ9T4P3Z9ZZM6SG4WXW6",
             "steps": [
               {
-                "action": "review",
+                "action": "implementation",
                 "custody_event_id": "event:4",
                 "observations": [
-                  "experiments/record_successor.py",
-                  "tests/test_record_successor.py",
-                  "research/record_successor.md",
-                  "Scientific and policy review found no remaining blockers in the reauthored material. Historical Actions run 44870723187 at 0893e804 records blocked_max_seed for M136279841 and certified small successors 37, 131 and 8209.",
-                  "Preserved missing-checkpoint history at feefdfcf; reauthored only reviewed source/specifications/reports from accepted cd1d0ed. Fresh canonical artifact checkpoints and normal exact-candidate validation will establish current proof."
+                  "prime_successor/fast_analytic.py",
+                  "experiments/record_gap.py",
+                  "experiments/orbital_trace.py",
+                  ".github/workflows/primeward-successor-experiment.yml",
+                  "85 unit tests passed, all eight application examples passed; symbolic record run screened 200000 odd offsets through factor 2000000 with first survivor offset 11; no successor certified."
                 ],
                 "proof_refs": [
-                  "hosted_record_probe",
-                  "hosted_calibration"
+                  "unit_tests",
+                  "applications",
+                  "record_target_successor"
                 ],
                 "scope": [
                   ".decapod/managed/specs",
+                  ".github/workflows",
                   "MANIFEST.json",
                   "README.md",
                   "experiments",
@@ -198,31 +206,33 @@
       "declared_commands": [],
       "destination": "pull request",
       "evidence": [
-        "Preserved missing-checkpoint history at feefdfcf; reauthored only reviewed source/specifications/reports from accepted cd1d0ed. Fresh canonical artifact checkpoints and normal exact-candidate validation will establish current proof.",
-        "Scientific and policy review found no remaining blockers in the reauthored material. Historical Actions run 44870723187 at 0893e804 records blocked_max_seed for M136279841 and certified small successors 37, 131 and 8209."
+        "85 unit tests passed, all eight application examples passed; symbolic record run screened 200000 odd offsets through factor 2000000 with first survivor offset 11; no successor certified."
       ],
       "inspected_files": [
-        "experiments/record_successor.py",
-        "research/record_successor.md",
-        "tests/test_record_successor.py"
+        "prime_successor/fast_analytic.py"
       ],
-      "intent_id": "intent:change_01M7Y9PDB3EMZEDG5KN8F5QFV1",
-      "modified_files": [],
+      "intent_id": "intent:change_01M7YBHZ9T4P3Z9ZZM6SG4WXW6",
+      "modified_files": [
+        ".github/workflows/primeward-successor-experiment.yml",
+        "experiments/orbital_trace.py",
+        "experiments/record_gap.py"
+      ],
       "next_transitions": [
         "Refine plan and declare falsifiable checks"
       ],
       "repo_scope": [
         ".decapod/managed/specs",
+        ".github/workflows",
         "MANIFEST.json",
         "README.md",
         "experiments",
         "research",
         "tests"
       ],
-      "run_id": "branch_01M7Y9PDBKDR74FSQP2NHKMSSE",
+      "run_id": "branch_01M7YBHZAAE8K3B4ZYN093SPBB",
       "schema_version": "1.1.0",
       "shortcut_risk_signals": [],
-      "task_id": "cicd_01m7y9ntpfj2afpc",
+      "task_id": "arch_01m7ybhhdv02t1wv",
       "tool_calls": [],
       "unresolved_assumptions": []
     }
