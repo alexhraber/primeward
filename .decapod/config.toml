@@ -43,11 +43,11 @@ required = true
 
 [proof.required_profile]
 id = "repo.pr-readiness.v1"
-reviewed_sources_digest = "sha256:7cb022aa134e38d9a076c4ec7a1d0cbcfdfdb948351dc77bb202d3d6c80c7467"
+reviewed_sources_digest = "sha256:54581ad407d90032aaf080e58d7ac112540914d15f0f0691a8c99b62d245fa48"
 
 [proof.repository_contract]
-reviewed_commands_digest = "sha256:49d46310972250eb8504f9ee15c393a7c6c5eb9247885d5b0b2711ebf8ef1c58"
-source_coverage = [{ source = ".github/workflows/decapod-validate.yml", commands = ["application_examples", "unit_tests"] }]
+reviewed_commands_digest = "sha256:ac2480e1a72138f2dc627ccbf81eb95a9d5e41f41e85ddf0d5d2d512047a97b0"
+source_coverage = [{ source = ".github/workflows/decapod-validate.yml", commands = ["application_examples", "unit_tests"] }, { source = ".github/workflows/record-successor.yml", ci_only = true, reason = "The record-input probe, bounded calibration jobs and hosted artifact upload execute on GitHub Actions. Local unit tests cover the harness; actual hosted outcome is inspected separately." }]
 
 [proof.repository_contract.executions.application_examples]
 program = "/home/ubuntu/primeward-runtime/bin/python3.14"

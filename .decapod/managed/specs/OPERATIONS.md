@@ -36,11 +36,15 @@ The local readiness contract uses a canonical native Python executable, a standa
 
 The trusted Linux CPython 3.14 venv can run `applications/tools/prepare_runtime.py` to create a new runtime directory, closure hashes and a suggested two-command TOML fragment. It refuses nonempty destinations and does not alter governance. Review the generated closure and current imports before reconciling the supported Decapod contract; an accepted policy transition still requires its normal authority. See `applications/tools/README.md`.
 
+## GitHub Record Runs
+
+The record-successor workflow runs on relevant main/work-branch pushes and manual dispatch. Two standard Linux jobs each have a five-minute cap; each numerical subprocess has a 60-second wall limit and 1 GiB address-space cap by default. Uploaded JSON and Markdown have 30-day retention. Inspect the scientific outcome in the result, not only the workflow conclusion. Hosted execution is checked separately from local Decapod proof.
+
 <!-- decapod:codebase-attestation:start -->
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `77ec1794e03e485a3d8d927049e0a3da108dc579c40541a59790529007b51fab`
-- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (4 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (8 files)
+- Repository signal fingerprint: `3ff49dc88737ecb33f7ddd2f6454d77a62e617c2d8995a23f7342345ab147643`
+- Significant implementation surfaces: `.github/` (2 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (5 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (9 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->

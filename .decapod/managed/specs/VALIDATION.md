@@ -26,11 +26,15 @@ Required command receipts bind the evaluated candidate and declared runtime. Uni
 
 Before publishing, review the bounded task scope, refresh authored specifications and generated attestations, checkpoint material changes, and run Decapod validation. Repair actual failures on the claimed branch and rerun affected required proof. Compare the published commit/tree with the validated candidate. Hosted CI status is reported only after observing that run.
 
+## Record Experiment Checks
+
+`tests/test_record_successor.py` checks record-scale symbolic magnitudes without allocating history, verifies that the seed refusal precedes the sieve, distinguishes precision and composite-input errors, validates exact smaller successors independently, and checks worker/CLI output. The separate GitHub run supplies actual record-input rejection and calibration evidence. It cannot be inferred from local test success alone.
+
 <!-- decapod:codebase-attestation:start -->
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `77ec1794e03e485a3d8d927049e0a3da108dc579c40541a59790529007b51fab`
-- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (4 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (8 files)
+- Repository signal fingerprint: `3ff49dc88737ecb33f7ddd2f6454d77a62e617c2d8995a23f7342345ab147643`
+- Significant implementation surfaces: `.github/` (2 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (5 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (9 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->

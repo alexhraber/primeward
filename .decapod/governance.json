@@ -1,70 +1,51 @@
 {
   "schema_version": "1.0.0",
   "baseline": {
-    "accepted_commit": "54f967542d08c4f63aa68fac20d6e0261f868854"
+    "accepted_commit": "cd1d0ed339ce65d0f531bf491c3a6d7ebeb46fb3",
+    "unresolved": {
+      "trajectory:322cb903c031fdd4": "Synthetic finite physics models require stated units and truncations. Exact prime recovery uses the existing Arb engine; floating-point models do not inherit its certificate.",
+      "trajectory:488dea8df09eba13": "The compact runtime has 102 measured files including a standard-library ZIP, native Python/modules, system libraries and a complete scientific dependency archive. The immutable proof entry point extracts only regular files/directories inside owned scratch, disables ambient site processing and passes the extracted package path to child Python. Import diagnostic confirmed NumPy 2.3.5, SciPy 1.17.0, python-flint 0.9.0 and Matplotlib 3.10.8. This supersedes the earlier unpacked-runtime declaration.",
+      "trajectory:4ca3ce6f77bd02a0": "The dedicated Python runtime closure includes the complete cache-free standard library, installed scientific dependencies excluding their unused tests/benchmarks/pip, package data, linked shared libraries and locale files: 3775 canonical files, 301390266 bytes. PYTHONHOME/PYTHONPATH select this runtime; PATH is empty and bytecode writes are disabled. Completeness is an authored review assertion. GitHub CI executes Python checks explicitly; local validation does not assert that hosted CI has run."
+    }
   },
   "change": {
-    "id": "change_01M7XY4NCHCM45KNHX1MZB4RTA",
-    "base_commit": "54f967542d08c4f63aa68fac20d6e0261f868854",
+    "id": "change_01M7Y8JF8ADDTSWJ0GV5ZDHKC6",
+    "base_commit": "cd1d0ed339ce65d0f531bf491c3a6d7ebeb46fb3",
     "target_base": "origin/main"
   },
   "checkpoints": [
     {
-      "id": "primeward-applications-implementation",
-      "summary": "Implement eight finite physics applications with CLI, independent tests, documentation and reviewed local proof contract; numerical validation pending.",
-      "input_digest": "sha256:0ddb8aff595a4931545e300be58c5511728c240c47ce45a8257c2c00e69882cd"
-    },
-    {
-      "id": "primeward-applications-proof-repair",
-      "summary": "Repair required specification structure and compact the measured runtime contract without removing the unit or application checks.",
-      "input_digest": "sha256:38ee72c78b7a0be15497b24b6b271276f9d35cde7fc4adc685842a57e70a079d"
-    },
-    {
-      "id": "primeward-applications-spec-review",
-      "summary": "Record explicit architecture, interfaces and security review against the implemented application source and runtime contract.",
-      "input_digest": "sha256:26a38a5936523b8aad14352a40f88bfe9283563ef27697ade27a758a1ce1d2fa"
-    },
-    {
-      "id": "primeward-applications-examples",
-      "summary": "Record eight validated-model examples with SVG plots and provenance; prepare the complete application candidate for exact-commit validation.",
-      "input_digest": "sha256:4d9cd7976c7e1e6575880d7ca724c506b09b2177c04899bbcfb4b79604794112",
-      "proof_refs": [
-        "/tmp/decapod-readiness-M00eHb/completion/native-readiness-receipt.json"
-      ]
-    },
-    {
-      "id": "primeward-applications-reproducible-runtime",
-      "summary": "Add and exercise the reproducible runtime provisioner, complete example artifacts and review the final source before exact-commit validation.",
-      "input_digest": "sha256:d35e8c88c7e735b9acff499839ae3ff0f7b5f4aa00567a0af6689d9f91901705"
+      "id": "record-successor-experiment",
+      "summary": "Add bounded GitHub Actions record-input probe, separate exact analytic calibration, nine tests and source-grounded resource analysis. Validation and hosted run pending.",
+      "input_digest": "sha256:dae27a1e1ed9d244bb023d1fbf721bdf51e47b847d026c85210ed2780804a638"
     }
   ],
   "intents": {
-    "intent:change_01M7XY4NCHCM45KNHX1MZB4RTA": {
+    "intent:change_01M7Y8JF8ADDTSWJ0GV5ZDHKC6": {
       "acceptance_criteria": [],
       "assumptions": [],
       "boundaries": [
         "Current claimed task and isolated work branch"
       ],
       "constraints": [
-        ".decapod/config.toml",
-        ".decapod/managed/specs",
-        ".github",
-        "MANIFEST.json",
+        "experiments",
+        "tests",
+        "research",
         "README.md",
-        "applications",
-        "pyproject.toml",
-        "requirements-applications.txt",
-        "tests"
+        "MANIFEST.json",
+        ".github",
+        ".decapod/config.toml",
+        ".decapod/managed/specs"
       ],
       "created_sequence": 1,
-      "id": "intent:change_01M7XY4NCHCM45KNHX1MZB4RTA",
+      "id": "intent:change_01M7Y8JF8ADDTSWJ0GV5ZDHKC6",
       "instruction_origin": {
         "source_ref": "caller:unverified"
       },
       "out_of_scope": [],
       "proof_requirements": [],
-      "raw_intent": "Implement and validate Primeward physics applications\n\nInitialize is now published. Implement eight runnable physics applications, shared CLI and plots, independent tests, examples and grounded documentation; configure exact-candidate Decapod proof and publish to alexhraber/primeward. One repository writer; other agents only review.",
-      "refined_intent": "Implement and validate Primeward physics applications\n\nInitialize is now published. Implement eight runnable physics applications, shared CLI and plots, independent tests, examples and grounded documentation; configure exact-candidate Decapod proof and publish to alexhraber/primeward. One repository writer; other agents only review.",
+      "raw_intent": "Run the record-prime successor experiment on GitHub Actions\n\nFind the immediate successor after M136279841 using the current Primeward analytic method and GitHub Actions compute. Add a bounded record-input probe, exact symbolic resource report, separate certified small-scale calibration, workflow artifacts and independent tests. Preserve the analytic method and limits; report a blocked target honestly if initialization cannot run. Publishing to main is authorized by the existing session. One repository writer.",
+      "refined_intent": "Run the record-prime successor experiment on GitHub Actions\n\nFind the immediate successor after M136279841 using the current Primeward analytic method and GitHub Actions compute. Add a bounded record-input probe, exact symbolic resource report, separate certified small-scale calibration, workflow artifacts and independent tests. Preserve the analytic method and limits; report a blocked target honestly if initialization cannot run. Publishing to main is authorized by the existing session. One repository writer.",
       "status": "refined",
       "updated_sequence": 3
     }
@@ -77,7 +58,7 @@
       },
       "deferred_questions": [],
       "human_questions": [],
-      "intent": "Implement and validate Primeward physics applications\n\nInitialize is now published. Implement eight runnable physics applications, shared CLI and plots, independent tests, examples and grounded documentation; configure exact-candidate Decapod proof and publish to alexhraber/primeward. One repository writer; other agents only review.",
+      "intent": "Run the record-prime successor experiment on GitHub Actions\n\nFind the immediate successor after M136279841 using the current Primeward analytic method and GitHub Actions compute. Add a bounded record-input probe, exact symbolic resource report, separate certified small-scale calibration, workflow artifacts and independent tests. Preserve the analytic method and limits; report a blocked target honestly if initialization cannot run. Publishing to main is authorized by the existing session. One repository writer.",
       "phases": [],
       "proof_hooks": [
         "decapod validate"
@@ -87,126 +68,88 @@
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/ARCHITECTURE.md",
-          "reason": "Reviewed the complete current source, saved outputs and newly exercised runtime provisioner. Core engines and eight model calculations are unchanged; the documented contributor tool reconstructs the measured environment without modifying governance.",
-          "reviewed_code_fingerprint": "77ec1794e03e485a3d8d927049e0a3da108dc579c40541a59790529007b51fab",
-          "spec_material_hash": "54468fd325f71f660c190679327f48f3f542c5e4e8415b5454ba40f611b7ec11"
+          "reason": "Reviewed the new experiment harness and two-job GitHub workflow: actual guarded input probe, compact Arb magnitude analysis, separate subprocess calibrations, explicit resource limits and output artifacts. Existing engine and physics architecture retained.",
+          "reviewed_code_fingerprint": "3ff49dc88737ecb33f7ddd2f6454d77a62e617c2d8995a23f7342345ab147643",
+          "spec_material_hash": "06a4040ce01b315d70ebbf40f8f244d7c7140a8d26bbd23a3466c46edbeea365"
         },
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/INTERFACES.md",
-          "reason": "Reviewed all public application options and status/result contracts, plus the isolated prepare_runtime.py --output interface and both suggested proof phases. The real rebuilt environment successfully imported the pinned libraries.",
-          "reviewed_code_fingerprint": "77ec1794e03e485a3d8d927049e0a3da108dc579c40541a59790529007b51fab",
-          "spec_material_hash": "7882e8c484d09f73ddcda3c55c702924cc7e8cc69267b296d0386caa66e4ae09"
+          "reason": "Reviewed target/calibrate/worker argument contracts, strict JSON with no enormous decimal input, scientific statuses, narrow constructor-error classification and independently verified calibration results.",
+          "reviewed_code_fingerprint": "3ff49dc88737ecb33f7ddd2f6454d77a62e617c2d8995a23f7342345ab147643",
+          "spec_material_hash": "39d6bf45b8f13b3aa5197b31038abc0d0039d6529ae5658bf0196e69b929d627"
         },
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/SECURITY.md",
-          "reason": "Reviewed the provisioner source: trusted installed-venv input, rejection of nonempty destinations, bounded regular-file proof extraction, no downloads and no governance writes. The native setup probe uses declared trusted library directories, not ambient loader overrides.",
-          "reviewed_code_fingerprint": "77ec1794e03e485a3d8d927049e0a3da108dc579c40541a59790529007b51fab",
-          "spec_material_hash": "6edc0c5c19951f482138ca9a48c1d98d9a1d62e240bbf9cc3f0be9a76bd270ff"
+          "reason": "Reviewed fixed analytic guards, bounded exponent/time/memory inputs, fresh worker processes, quoted workflow input environment and read-only GitHub token. No fallback search, limit removal or private-data upload.",
+          "reviewed_code_fingerprint": "3ff49dc88737ecb33f7ddd2f6454d77a62e617c2d8995a23f7342345ab147643",
+          "spec_material_hash": "236f4ebd5e984afd37b7383c1f2c1760c1742643d55e96393671d0283e08f004"
         }
       ],
       "state": "APPROVED",
       "stop_conditions": [],
-      "title": "Implement and validate Primeward physics applications",
+      "title": "Run the record-prime successor experiment on GitHub Actions",
       "todo_ids": [
-        "feat_01m7xy45q6e2jwfn"
+        "cicd_01m7y8j6dvkfxc9w"
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1795230605Z"
+      "updated_at": "1795238605Z"
     },
     "trajectory": {
       "active_boundaries": [
         "Current claimed task and isolated work branch",
-        "Single repository writer in this claimed worktree; read-only independent reviews; existing prime algorithms unchanged."
+        "The record experiment runs on GitHub Actions. The current analytic method and its guard limits are preserved; no unbounded search or record discovery claim without certified output."
       ],
-      "artifact_hash": "sha256:5279e34aa284d90669488cf515e6a50f2f7cb114ab2c9875d3f3f84cd8ce7de0",
-      "checks": [
-        {
-          "name": "application_examples",
-          "status": "passed"
-        },
-        {
-          "name": "initial_governance_validation",
-          "status": "failed"
-        },
-        {
-          "name": "proof_runtime_provisioning",
-          "status": "passed"
-        },
-        {
-          "name": "unit_tests",
-          "status": "passed"
-        }
-      ],
-      "current_phase": "verification",
+      "artifact_hash": "sha256:4ec7cd59fe4dca62bc3c23bbe09bb69213049a44292b6bf57529b6c6744b6aba",
+      "checks": [],
+      "current_phase": "implementation",
       "custody": {
         "events": [
           {
             "event_id": "event:2",
-            "intent_id": "intent:change_01M7XY4NCHCM45KNHX1MZB4RTA",
+            "intent_id": "intent:change_01M7Y8JF8ADDTSWJ0GV5ZDHKC6",
             "kind": "created",
             "sequence": 2
           },
           {
             "event_id": "event:3",
-            "intent_id": "intent:change_01M7XY4NCHCM45KNHX1MZB4RTA",
+            "intent_id": "intent:change_01M7Y8JF8ADDTSWJ0GV5ZDHKC6",
             "kind": "refined",
             "sequence": 3
           },
           {
-            "detail": "trajectory:branch_01M7XY4NCY3JYFCN1RR43QC1PQ",
+            "detail": "trajectory:branch_01M7Y8JF8VVW8709SYXXV4GAK7",
             "event_id": "event:4",
-            "intent_id": "intent:change_01M7XY4NCHCM45KNHX1MZB4RTA",
+            "intent_id": "intent:change_01M7Y8JF8ADDTSWJ0GV5ZDHKC6",
             "kind": "trajectory_step_recorded",
             "sequence": 4
           },
           {
-            "detail": "trajectory:branch_01M7XY4NCY3JYFCN1RR43QC1PQ",
+            "detail": "trajectory:branch_01M7Y8JF8VVW8709SYXXV4GAK7",
             "event_id": "event:5",
-            "intent_id": "intent:change_01M7XY4NCHCM45KNHX1MZB4RTA",
+            "intent_id": "intent:change_01M7Y8JF8ADDTSWJ0GV5ZDHKC6",
             "kind": "trajectory_step_recorded",
             "sequence": 5
-          },
-          {
-            "detail": "trajectory:branch_01M7XY4NCY3JYFCN1RR43QC1PQ",
-            "event_id": "event:6",
-            "intent_id": "intent:change_01M7XY4NCHCM45KNHX1MZB4RTA",
-            "kind": "trajectory_step_recorded",
-            "sequence": 6
-          },
-          {
-            "detail": "trajectory:branch_01M7XY4NCY3JYFCN1RR43QC1PQ",
-            "event_id": "event:7",
-            "intent_id": "intent:change_01M7XY4NCHCM45KNHX1MZB4RTA",
-            "kind": "trajectory_step_recorded",
-            "sequence": 7
-          },
-          {
-            "detail": "trajectory:branch_01M7XY4NCY3JYFCN1RR43QC1PQ",
-            "event_id": "event:8",
-            "intent_id": "intent:change_01M7XY4NCHCM45KNHX1MZB4RTA",
-            "kind": "trajectory_step_recorded",
-            "sequence": 8
           }
         ],
         "knowledge_candidates": [],
-        "next_sequence": 8,
+        "next_sequence": 5,
         "schema_version": "1.1.0",
         "trajectories": {
-          "branch_01M7XY4NCY3JYFCN1RR43QC1PQ": {
+          "branch_01M7Y8JF8VVW8709SYXXV4GAK7": {
             "evidence_only": true,
-            "id": "branch_01M7XY4NCY3JYFCN1RR43QC1PQ",
-            "intent_id": "intent:change_01M7XY4NCHCM45KNHX1MZB4RTA",
+            "id": "branch_01M7Y8JF8VVW8709SYXXV4GAK7",
+            "intent_id": "intent:change_01M7Y8JF8ADDTSWJ0GV5ZDHKC6",
             "steps": [
               {
                 "action": "implementation",
                 "custody_event_id": "event:4",
                 "observations": [
-                  "README.md",
                   "prime_successor/fast_analytic.py",
-                  "Published bootstrap 54f967542d08c4f63aa68fac20d6e0261f868854. Local executor blocks AF_UNIX; unchanged Decapod release is running in an authorized temporary Vercel Sandbox. No product edits were made before EXECUTION_READY."
+                  "prime_successor/analytic.py",
+                  "Independent source/math review derives exact seed bytes 2^E and initial precision lower budget (2^E+2)*(E+1)+256. Actual target input is representable in about 17MB packed. Single repository writer in an admitted worktree; separate target and calibration outcomes."
                 ],
                 "proof_refs": [],
                 "scope": [
@@ -215,24 +158,21 @@
                   ".github",
                   "MANIFEST.json",
                   "README.md",
-                  "applications",
-                  "pyproject.toml",
-                  "requirements-applications.txt",
+                  "experiments",
+                  "research",
                   "tests"
                 ],
                 "sequence": 4,
-                "validation_findings": [
-                  "Synthetic finite physics models require stated units and truncations. Exact prime recovery uses the existing Arb engine; floating-point models do not inherit its certificate."
-                ]
+                "validation_findings": []
               },
               {
                 "action": "implementation",
                 "custody_event_id": "event:5",
                 "observations": [
-                  "applications/README.md",
-                  ".decapod/config.toml",
-                  ".github/workflows/decapod-validate.yml",
-                  "Reviewed the sole GitHub workflow, pyproject.toml and requirements.txt inventory; commands cover full unittest suite and all eight default scientific examples. Independently reviewed physics bounds, wave composition and inverse-grid convergence. Fixed whole-interval model handling, generator reuse, sparse controls, exponent underflow and low-temperature cancellation."
+                  "experiments/record_successor.py",
+                  ".github/workflows/record-successor.yml",
+                  "tests/test_record_successor.py",
+                  "Reviewed the new Actions workflow and complete discovered inventory. Existing required commands and measured runtime are retained. New workflow is explicitly CI-only because its record probe and artifacts must be observed on GitHub; local tests do not stand in for that hosted run. Nine new tests cover scientific statuses, exact scale analysis and independent calibration checks."
                 ],
                 "proof_refs": [],
                 "scope": [
@@ -241,86 +181,11 @@
                   ".github",
                   "MANIFEST.json",
                   "README.md",
-                  "applications",
-                  "pyproject.toml",
-                  "requirements-applications.txt",
+                  "experiments",
+                  "research",
                   "tests"
                 ],
                 "sequence": 5,
-                "validation_findings": [
-                  "The dedicated Python runtime closure includes the complete cache-free standard library, installed scientific dependencies excluding their unused tests/benchmarks/pip, package data, linked shared libraries and locale files: 3775 canonical files, 301390266 bytes. PYTHONHOME/PYTHONPATH select this runtime; PATH is empty and bytecode writes are disabled. Completeness is an authored review assertion. GitHub CI executes Python checks explicitly; local validation does not assert that hosted CI has run."
-                ]
-              },
-              {
-                "action": "repair",
-                "custody_event_id": "event:6",
-                "observations": [
-                  "Initial validation found 21 missing specification structure/density obligations and one 64 KiB config limit. Authored the required project sections and topology, preserved generated blocks, and reviewed a compact runtime contract. Both required commands remain: full unit suite and all eight application demos."
-                ],
-                "proof_refs": [
-                  "initial_governance_validation"
-                ],
-                "scope": [
-                  ".decapod/config.toml",
-                  ".decapod/managed/specs",
-                  ".github",
-                  "MANIFEST.json",
-                  "README.md",
-                  "applications",
-                  "pyproject.toml",
-                  "requirements-applications.txt",
-                  "tests"
-                ],
-                "sequence": 6,
-                "validation_findings": [
-                  "The compact runtime has 102 measured files including a standard-library ZIP, native Python/modules, system libraries and a complete scientific dependency archive. The immutable proof entry point extracts only regular files/directories inside owned scratch, disables ambient site processing and passes the extracted package path to child Python. Import diagnostic confirmed NumPy 2.3.5, SciPy 1.17.0, python-flint 0.9.0 and Matplotlib 3.10.8. This supersedes the earlier unpacked-runtime declaration."
-                ]
-              },
-              {
-                "action": "verification",
-                "custody_event_id": "event:7",
-                "observations": [
-                  "Decapod validation passed with 195 project gates, no failures, and two actual bounded native stages. Owned evidence /tmp/decapod-readiness-M00eHb reports 64 unit tests passed and all eight application demos passed. Generated eight JSON outputs, eight SVG figures and provenance from the checked application source; inspected the inverse-spectrum plot for legibility. Final artifact candidate still requires its own exact-commit validation."
-                ],
-                "proof_refs": [
-                  "unit_tests",
-                  "application_examples"
-                ],
-                "scope": [
-                  ".decapod/config.toml",
-                  ".decapod/managed/specs",
-                  ".github",
-                  "MANIFEST.json",
-                  "README.md",
-                  "applications",
-                  "pyproject.toml",
-                  "requirements-applications.txt",
-                  "tests"
-                ],
-                "sequence": 7,
-                "validation_findings": []
-              },
-              {
-                "action": "verification",
-                "custody_event_id": "event:8",
-                "observations": [
-                  "Added a reproducible Linux CPython 3.14 runtime provisioner that refuses nonempty destinations and does not edit governance. An actual rebuilt runtime imported all four pinned scientific libraries. Its 102-file closure matches the existing reviewed contract after root relocation; suggested TOML parses and retains both required phases. Fixed standalone vendored-DSO lookup in the setup probe by using only trusted installed native directories."
-                ],
-                "proof_refs": [
-                  "proof_runtime_provisioning"
-                ],
-                "scope": [
-                  ".decapod/config.toml",
-                  ".decapod/managed/specs",
-                  ".github",
-                  "MANIFEST.json",
-                  "README.md",
-                  "applications",
-                  "pyproject.toml",
-                  "requirements-applications.txt",
-                  "tests"
-                ],
-                "sequence": 8,
                 "validation_findings": []
               }
             ]
@@ -330,21 +195,18 @@
       "declared_commands": [],
       "destination": "pull request",
       "evidence": [
-        "Added a reproducible Linux CPython 3.14 runtime provisioner that refuses nonempty destinations and does not edit governance. An actual rebuilt runtime imported all four pinned scientific libraries. Its 102-file closure matches the existing reviewed contract after root relocation; suggested TOML parses and retains both required phases. Fixed standalone vendored-DSO lookup in the setup probe by using only trusted installed native directories.",
-        "Decapod validation passed with 195 project gates, no failures, and two actual bounded native stages. Owned evidence /tmp/decapod-readiness-M00eHb reports 64 unit tests passed and all eight application demos passed. Generated eight JSON outputs, eight SVG figures and provenance from the checked application source; inspected the inverse-spectrum plot for legibility. Final artifact candidate still requires its own exact-commit validation.",
-        "Initial validation found 21 missing specification structure/density obligations and one 64 KiB config limit. Authored the required project sections and topology, preserved generated blocks, and reviewed a compact runtime contract. Both required commands remain: full unit suite and all eight application demos.",
-        "Published bootstrap 54f967542d08c4f63aa68fac20d6e0261f868854. Local executor blocks AF_UNIX; unchanged Decapod release is running in an authorized temporary Vercel Sandbox. No product edits were made before EXECUTION_READY.",
-        "Reviewed the sole GitHub workflow, pyproject.toml and requirements.txt inventory; commands cover full unittest suite and all eight default scientific examples. Independently reviewed physics bounds, wave composition and inverse-grid convergence. Fixed whole-interval model handling, generator reuse, sparse controls, exponent underflow and low-temperature cancellation."
+        "Independent source/math review derives exact seed bytes 2^E and initial precision lower budget (2^E+2)*(E+1)+256. Actual target input is representable in about 17MB packed. Single repository writer in an admitted worktree; separate target and calibration outcomes.",
+        "Reviewed the new Actions workflow and complete discovered inventory. Existing required commands and measured runtime are retained. New workflow is explicitly CI-only because its record probe and artifacts must be observed on GitHub; local tests do not stand in for that hosted run. Nine new tests cover scientific statuses, exact scale analysis and independent calibration checks."
       ],
       "inspected_files": [
-        "README.md",
+        "prime_successor/analytic.py",
         "prime_successor/fast_analytic.py"
       ],
-      "intent_id": "intent:change_01M7XY4NCHCM45KNHX1MZB4RTA",
+      "intent_id": "intent:change_01M7Y8JF8ADDTSWJ0GV5ZDHKC6",
       "modified_files": [
-        ".decapod/config.toml",
-        ".github/workflows/decapod-validate.yml",
-        "applications/README.md"
+        ".github/workflows/record-successor.yml",
+        "experiments/record_successor.py",
+        "tests/test_record_successor.py"
       ],
       "next_transitions": [
         "Refine plan and declare falsifiable checks"
@@ -355,21 +217,16 @@
         ".github",
         "MANIFEST.json",
         "README.md",
-        "applications",
-        "pyproject.toml",
-        "requirements-applications.txt",
+        "experiments",
+        "research",
         "tests"
       ],
-      "run_id": "branch_01M7XY4NCY3JYFCN1RR43QC1PQ",
+      "run_id": "branch_01M7Y8JF8VVW8709SYXXV4GAK7",
       "schema_version": "1.1.0",
       "shortcut_risk_signals": [],
-      "task_id": "feat_01m7xy45q6e2jwfn",
+      "task_id": "cicd_01m7y8j6dvkfxc9w",
       "tool_calls": [],
-      "unresolved_assumptions": [
-        "Synthetic finite physics models require stated units and truncations. Exact prime recovery uses the existing Arb engine; floating-point models do not inherit its certificate.",
-        "The compact runtime has 102 measured files including a standard-library ZIP, native Python/modules, system libraries and a complete scientific dependency archive. The immutable proof entry point extracts only regular files/directories inside owned scratch, disables ambient site processing and passes the extracted package path to child Python. Import diagnostic confirmed NumPy 2.3.5, SciPy 1.17.0, python-flint 0.9.0 and Matplotlib 3.10.8. This supersedes the earlier unpacked-runtime declaration.",
-        "The dedicated Python runtime closure includes the complete cache-free standard library, installed scientific dependencies excluding their unused tests/benchmarks/pip, package data, linked shared libraries and locale files: 3775 canonical files, 301390266 bytes. PYTHONHOME/PYTHONPATH select this runtime; PATH is empty and bytecode writes are disabled. Completeness is an authored review assertion. GitHub CI executes Python checks explicitly; local validation does not assert that hosted CI has run."
-      ]
+      "unresolved_assumptions": []
     }
   }
 }

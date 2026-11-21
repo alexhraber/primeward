@@ -21,11 +21,15 @@ Returned integer successors remain immediate primes under the certified core con
 
 The analytic engine initializes, decodes a successor, removes its factor and repeats, rebuilding precision state when its acceptance condition requires it. Spectral inference intersects observations, then either resolves a level and removes its interval, stops unresolved, or rejects contradictory data. The CLI generates inputs, runs a model, serializes diagnostics and exits according to those diagnostics; it does not retry failed science with changed assumptions.
 
+## Record-Scale Requirements
+
+For p=2^E-1, the current residual engine selects s=2^E+2 and checks the exact pre-logarithm budget (2^E+2)*(E+1)+256 bits. Its seed sieve separately requests 2^E bytes. The analysis uses compact Arb values and interval-checked decimal orders. These are properties of this implementation, not a universal complexity lower bound. Engine-only candidate-test counters remain separate from independent calibration trial division.
+
 <!-- decapod:codebase-attestation:start -->
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `77ec1794e03e485a3d8d927049e0a3da108dc579c40541a59790529007b51fab`
-- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (4 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (8 files)
+- Repository signal fingerprint: `3ff49dc88737ecb33f7ddd2f6454d77a62e617c2d8995a23f7342345ab147643`
+- Significant implementation surfaces: `.github/` (2 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (5 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (9 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->

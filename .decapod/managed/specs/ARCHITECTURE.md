@@ -75,11 +75,15 @@ Finite-grid inverse fits can overfit discretization; finer grids and larger boxe
 Long barrier chains can underflow transmission; log transmission and flux errors remain explicit.
 Finite cutoffs in orbit sums and scattering are reported and do not imply asymptotic theorems.
 
+## Record Experiment Execution
+
+`experiments/record_successor.py` separates compact Arb resource analysis from an actual bounded constructor probe. A fresh subprocess owns each numerical case, with explicit time and memory limits. The GitHub workflow has independent target and calibration jobs and retains JSON/Markdown artifacts. The existing physics modules and prime engines remain unchanged.
+
 <!-- decapod:codebase-attestation:start -->
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `77ec1794e03e485a3d8d927049e0a3da108dc579c40541a59790529007b51fab`
-- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (4 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (8 files)
+- Repository signal fingerprint: `3ff49dc88737ecb33f7ddd2f6454d77a62e617c2d8995a23f7342345ab147643`
+- Significant implementation surfaces: `.github/` (2 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (5 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (9 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->

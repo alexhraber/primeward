@@ -16,6 +16,10 @@ The shared CLI must return reproducible JSON, state its prime source and assumpt
 
 Preserve the core prime algorithms and existing benchmark conclusions. Keep application dependencies optional, source selection explicit and every model finite with stated assumptions. Use only supported Decapod operations for machine-owned state. Publish code only after required checks and an exact-candidate review.
 
+## Record-Scale Experiment
+
+The requested target is the immediate successor after M136279841. The bounded GitHub Actions experiment exercises the actual input against the unchanged analytic engine and distinguishes a certified successor from an initialization refusal. Separate smaller calibrations verify the implemented extraction rule; they do not count as solving the record target.
+
 <!-- decapod:declared-capabilities:start -->
 
 ## Declared Capability Surfaces
@@ -31,7 +35,7 @@ These declarations select authoring and proof obligations; they do not attest im
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `77ec1794e03e485a3d8d927049e0a3da108dc579c40541a59790529007b51fab`
-- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (4 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (8 files)
+- Repository signal fingerprint: `3ff49dc88737ecb33f7ddd2f6454d77a62e617c2d8995a23f7342345ab147643`
+- Significant implementation surfaces: `.github/` (2 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (5 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (9 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->
