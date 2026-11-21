@@ -36,11 +36,15 @@ The local readiness contract uses a canonical native Python executable, a standa
 
 The trusted Linux CPython 3.14 venv can run `applications/tools/prepare_runtime.py` to create a new runtime directory, closure hashes and a suggested two-command TOML fragment. It refuses nonempty destinations and does not alter governance. Review the generated closure and current imports before reconciling the supported Decapod contract; an accepted policy transition still requires its normal authority. See `applications/tools/README.md`.
 
+## GitHub Record Runs
+
+Historical run 44870723187 at source commit 0893e80426b5f32fc898acc46fc8b8f3dcf6f614 used two standard Linux jobs with five-minute caps. Each numerical subprocess had a 60-second wall limit and 1 GiB address-space cap; uploaded artifacts have 30-day retention. Original reports are committed under research/record_successor_runs. The CLI can repeat target or calibration cases. This candidate preserves the accepted CI workflow/configuration; a permanent added workflow requires a separately authorized policy transition. Inspect the scientific outcome, not only workflow completion. Hosted execution is checked separately from local Decapod proof.
+
 <!-- decapod:codebase-attestation:start -->
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `77ec1794e03e485a3d8d927049e0a3da108dc579c40541a59790529007b51fab`
-- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (4 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (8 files)
+- Repository signal fingerprint: `b3ea6fc7d61c9f2b597a04cc2a70abe27a08a5143f47b717086beac5716f8449`
+- Significant implementation surfaces: `.github/` (1 files), `README.md/` (1 files), `applications/` (17 files), `experiments/` (5 files), `prime_successor/` (6 files), `pyproject.toml/` (1 files), `requirements.txt/` (1 files), `tests/` (9 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->

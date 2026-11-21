@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "experiment": "target",
+  "provenance": {
+    "commit": "0893e80426b5f32fc898acc46fc8b8f3dcf6f614",
+    "run_id": "44870723187",
+    "python": "3.14.10",
+    "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
+    "cpu_count": 4,
+    "source_sha256": {
+      "prime_successor/analytic.py": "0389caac956411d944e7b25bdad58e931ee805dad196a17408e1cfaf0e709022",
+      "prime_successor/fast_analytic.py": "ad6d49e3b5685f16b4b38f2c330e811824ec68100574614ad0efc441335bf5eb",
+      "experiments/record_successor.py": "323d16326a2987520e5605421bbbdd1e23fe4d4e4a44787d02207a2b43d7df93"
+    }
+  },
+  "requirements": {
+    "target": "2^136279841-1",
+    "mersenne_exponent": 136279841,
+    "input_binary_digits": 136279841,
+    "input_decimal_digits": 41024320,
+    "input_packed_bytes": 17034981,
+    "analytic_exponent_exact": "2^136279841+2",
+    "successor_cap_exact": "2^136279842+1",
+    "seed_sieve_bytes": {
+      "exact": "2^136279841",
+      "decimal_digits": 41024320,
+      "scientific_approximation": "8.816943275e+41024319",
+      "log10_enclosure": "[41024319.9453180467107183 +/- 2.42e-18]"
+    },
+    "initial_precision_lower_budget_bits": {
+      "exact": "(2^136279841+2)*136279842+256",
+      "decimal_digits": 41024329,
+      "scientific_approximation": "1.201571636e+41024328",
+      "log10_enclosure": "[41024328.0797496680949062 +/- 1.74e-17]"
+    },
+    "seed_exceeds_platform_index": true,
+    "limits": {
+      "max_seed": 100000,
+      "max_precision_bits": 8000000,
+      "guard_bits": 256
+    },
+    "interpretation": "Requirements of the current initialization implementation; not a lower bound for every possible prime algorithm."
+  },
+  "case": {
+    "target": "2^136279841-1",
+    "mersenne_exponent": 136279841,
+    "status": "blocked_max_seed",
+    "successor": null,
+    "successor_certified": false,
+    "starting_primality_verified_in_run": false,
+    "residual_initialized": false,
+    "future_candidate_primality_tests_engine": 0,
+    "input_bit_length": 136279841,
+    "python_input_object_bytes": 18170672,
+    "engine_attempted": true,
+    "rejection": "start exceeds the explicit max_seed limit",
+    "elapsed_seconds": 0.016856117000003223,
+    "wall_seconds": 0.08407955800001332,
+    "bounds": {
+      "timeout_seconds": 60,
+      "memory_mib": 1024
+    }
+  },
+  "experiment_completed": true
+}
